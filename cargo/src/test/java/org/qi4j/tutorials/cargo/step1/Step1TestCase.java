@@ -19,6 +19,8 @@ package org.qi4j.tutorials.cargo.step1;
 
 import junit.framework.TestCase;
 import org.qi4j.tutorials.cargo.step1.internal.ShippingServiceImpl;
+import org.qi4j.tutorials.cargo.step1.internal.CargoImpl;
+import org.qi4j.tutorials.cargo.step1.internal.VoyageImpl;
 import org.qi4j.tutorials.cargo.step1.OverbookingPolicy;
 
 public class Step1TestCase extends TestCase
@@ -31,14 +33,14 @@ public class Step1TestCase extends TestCase
     {
         BookingPolicy policy = new OverbookingPolicy();
         shippingService = new ShippingServiceImpl( policy );
-        voyage = shippingService.findVoyage( "Singapore", "New York" );
+        voyage = newVoyage( "Singapore", "New York" );
     }
 
     public void testOrdinaryBooking()
     {
-        Cargo cargo1 = shippingService.newCargo( 40 );
-        Cargo cargo2 = shippingService.newCargo( 40 );
-        Cargo cargo3 = shippingService.newCargo( 20 );
+        Cargo cargo1 = newCargo( 40 );
+        Cargo cargo2 = newCargo( 40 );
+        Cargo cargo3 = newCargo( 20 );
         int code = shippingService.makeBooking( cargo1, voyage );
         assertEquals( 1, code );
         code = shippingService.makeBooking( cargo2, voyage );
@@ -49,8 +51,8 @@ public class Step1TestCase extends TestCase
 
     public void testOverbooking()
     {
-        Cargo cargo1 = shippingService.newCargo( 100 );
-        Cargo cargo2 = shippingService.newCargo( 9 );
+        Cargo cargo1 = newCargo( 100 );
+        Cargo cargo2 = newCargo( 9 );
         int code = shippingService.makeBooking( cargo1, voyage );
         assertEquals( 1, code );
         code = shippingService.makeBooking( cargo2, voyage );
@@ -59,9 +61,9 @@ public class Step1TestCase extends TestCase
 
     public void testTooMuch()
     {
-        Cargo cargo1 = shippingService.newCargo( 40 );
-        Cargo cargo2 = shippingService.newCargo( 40 );
-        Cargo cargo3 = shippingService.newCargo( 31 );
+        Cargo cargo1 = newCargo( 40 );
+        Cargo cargo2 = newCargo( 40 );
+        Cargo cargo3 = newCargo( 31 );
         int code = shippingService.makeBooking( cargo1, voyage );
         assertEquals( 1, code );
         code = shippingService.makeBooking( cargo2, voyage );
@@ -69,4 +71,15 @@ public class Step1TestCase extends TestCase
         code = shippingService.makeBooking( cargo3, voyage );
         assertEquals( -1, code );
     }
+
+    private Cargo newCargo( double size )
+    {
+        return new CargoImpl( size );
+    }
+
+    private Voyage newVoyage( String sourceCity, String destinationCity )
+    {
+        return new VoyageImpl( 100 );  // Fake the finder to just return a new Voyage for the demonstration purpose.
+    }
+
 }

@@ -53,13 +53,4 @@ public class ShippingServiceImpl
         return confirmation;
     }
 
-    public Cargo newCargo( double size )
-    {
-        return new CargoImpl( size );
-    }
-
-    public Voyage findVoyage( String sourceCity, String destinationCity )
-    {
-        return new VoyageImpl( 100 );  // Fake the finder to just return a new Voyage for the demonstration purpose.
-    }
 }

@@ -1,58 +1,71 @@
 <body>
-<h1>Step 1 - Evans "Making a booking."</h1>
+<h1>Step 2 - Qi4j "Making a booking."</h1>
 
 <p>
     Location: Page 17, "Knowledge-Rich Design.
 </p>
 
-<p>
-    We start with a very simple domain design, consisting of a <i>Voyage</i> with <i>Cargo</i> items.
-    The booking system is responsible for matching as many <i>Cargo</i> items on to the <i>Voyage</i>
-    but not too many. Evans introduces a <i>capacity</i> property in the Voyage and a <i>size</i>
-    property to the Cargo.
-</p>
-
-<p>
-    Mr Evans continues to discuss that a <i>makeBooking( Cargo cargo, Voyage voyage )</i> method
-    (presumably in some service instance somewhere) becomes too complicated for the domain experts
-    and suggests breaking out the <b>policy</b> into a separate class.
-</p>
-
-<p>
-    Let's start with putting into the code that Mr Evans suggests, using so called POJO or JavaBeans
-    programming convention.
-</p>
-
-<p>
-    You will find the suggested code in this package. Take a look at it. You can also run the
-    testcase <b>step1</b> to see simple usage cases.
-</p>
-
-<p>
-    We have made this code more complex than the book is suggesting. First of all there is a separation
-    of interface from implementation. This is done to make the code more flexible for future change;
-</p>
+<h2>Results from Step1</h2>
 <ul>
-    <li>The <i>Voyage.addCargo()</i> <b>must</b> be hidden from the client code, so that it is forced to call
-        the <i>ShippingService.makeBooking()</i> and not bypassing it and call the <i>addCargo()</i> directly.
+    <li>For the Cargo and Voyage interfaces, we have introduced the <i>Property&lt;Double&gt;</i>.
+    <i>Property</i> is an explicitly supported type in Qi4j, which makes life a lot easier
+    for everyone involved.
     </li>
-    <li>DDD book doesn't mention the <i>ShippingService</i> in this section, but was introduced to make the
-        code executable. Making the ShippingService an interface is just following common practices, which
-        allows us to change the, or have multiple, implementations.
+    <li>The SequenceGenerator has changed the name to "Sequence", since it doesn't handle the
+        generation of new numbers. It is given <i>Property&lt;Integer&gt;</i> to hold the last
+        sequence number, but it doesn't handle the <i>next()</i> equivalent from Evans' code.
+        The SequenceMixin provides the implementation for the interface.
     </li>
-    <li><i>Cargo</i> also has separated interface from the implementation for the same reason.</li>
-    <li><i>Sequence</i> is separated largely because in a real application, it is probably dependent on
-        the customer.
+    <li>
+        The increment of the sequence number is instead handled in the SequencingConcern. One
+        advantage is that the number will only be incremented if the policies are met, as we
+        will place this concern at the top of the call chain.
     </li>
-    <li>Finally, the <i>OverbookingPolicy</i> is also separated since we want to be able to have many Policies
-        sooner or later.
+    <li>
+        Overbooking is a concern (according to Mr Evans in this part of the book) for the
+        <i>makeBooking()</i> method. So, we create an <i>OverbookingConcern</i>, that implements
+        the ShippingService. See below for more details.
     </li>
-    <li>And with this separation, and hiding of the implementation from the client by putting all of the
-        implementation details in the <i>internal</i> package, we also need to add methods to create <i>Cargo</i>
-        and find <i>Voyage</i> instances.
+    <li>
+        The ShippingService remains the same. But notice that there is <b>No Implementation!</b>
+    </li>
+    <li>
+        We introduce a new interface, ShippingServiceComposite. This interface binds together the
+        parts to form the Composite. It <b>extends</b> the <i>ShippingService</i> and the
+        <i>Composite</i> and has annotations about how it should be wire together.
     </li>
 </ul>
-<p>
 
+<h3>The ShippingServiceComposite</h3>
+<p>
+    The <i>ShippingServiceComposite</i> declares that the <i>PropertyMixin</i> and <i>NoopMixin</i>
+    should be used as MixinType implementations. These are very generic and often re-used to avoid
+    writing the MixinType implementation classes altogether. <i>PropertyMixin</i> handles all the
+    <i>Property<?></i> declarations, in this case just the <i>Property&lt;Integer&gt; sequence();</i>
+    in the <i>Sequence</i> MixinType. The <i>NoopMixin</i> is a generic implementation that returns
+    nothing useful, which <b>is</b> useful when the actual work of the method is done in the concerns
+    and/or side effects.
+</p>
+<p>
+    There is also a declaration of which concerns should be used, and the order is significant. The
+    <i>SequencingConcern</i> is placed first, that means it will be invoked before the <i>OverbookingConcern</i>,
+    but it performs its own work <b>after</b> the call to the <i>next.makeBooking()</i> method.
+</p>
+
+<h3>The OverbookingConcern</h3>
+<p>
+    The <i>@ConcernFor</i> annotations marks the member where the underlying
+    concerns will be injected, or ultimately the implementation of the <i>ShippingService</i>
+    interface.
+</p>
+<p>
+    The <i>@ThisCompositeAs</i> annotation, marks a field that will be injected with
+    an instance of the MixinType of that field. If the CompositeType of the composite that the
+    concern belongs to exposes this type, then it points back to the current composite. Otherwise,
+    a new mixin is added internally in the composite to fulfill this need.
+</p>
+
+<h2>Moving on</h2>
+<p>
 </p>
 </body>

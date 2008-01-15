@@ -18,14 +18,11 @@
 package org.qi4j.tutorials.cargo.step2;
 
 import org.qi4j.property.Property;
-import org.qi4j.composite.scope.PropertyField;
+import org.qi4j.composite.Mixins;
+import org.qi4j.library.framework.entity.PropertyMixin;
 
-public class SequenceGeneratorMixin implements SequenceGenerator
+@Mixins( PropertyMixin.class )
+public interface Sequence
 {
-    @PropertyField private Property<Integer> sequence;
-
-    public Property<Integer> sequence()
-    {
-        return sequence;
-    }
+    Property<Integer> sequence();
 }

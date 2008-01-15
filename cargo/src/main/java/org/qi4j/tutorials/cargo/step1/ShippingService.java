@@ -23,8 +23,4 @@ import org.qi4j.tutorials.cargo.step1.internal.VoyageImpl;
 public interface ShippingService
 {
     int makeBooking( Cargo cargo, Voyage voyage );
-
-    Cargo newCargo( double size );
-
-    Voyage findVoyage( String sourceCity, String destinationCity );
 }
