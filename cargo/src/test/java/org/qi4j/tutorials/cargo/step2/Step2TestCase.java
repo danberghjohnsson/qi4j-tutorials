@@ -17,7 +17,7 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import org.qi4j.bootstrap.AssemblyException;
+import org.qi4j.bootstrap.AssemblerException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.composite.CompositeBuilder;
 import org.qi4j.test.AbstractQi4jTest;
@@ -31,8 +31,8 @@ public class Step2TestCase extends AbstractQi4jTest
     {
         super.setUp();
         CompositeBuilder<VoyageComposite> voyageBuilder = compositeBuilderFactory.newCompositeBuilder( VoyageComposite.class );
-        voyageBuilder.propertiesFor( Voyage.class ).bookedCargoSize().set(0.0);
-        voyageBuilder.propertiesFor( Voyage.class ).capacity().set(100.0);
+        voyageBuilder.propertiesFor( Voyage.class ).bookedCargoSize().set( 0.0 );
+        voyageBuilder.propertiesFor( Voyage.class ).capacity().set( 100.0 );
         voyage = voyageBuilder.newInstance();
 
         CompositeBuilder<ShippingServiceComposite> shippingBuilder = compositeBuilderFactory.newCompositeBuilder( ShippingServiceComposite.class );
@@ -75,8 +75,8 @@ public class Step2TestCase extends AbstractQi4jTest
         assertEquals( -1, code );
     }
 
-    public void configure( ModuleAssembly module )
-        throws AssemblyException
+    public void assemble( ModuleAssembly module )
+        throws AssemblerException
     {
         module.addComposites( VoyageComposite.class, CargoComposite.class, ShippingServiceComposite.class );
     }
