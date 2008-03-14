@@ -17,7 +17,7 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import org.qi4j.bootstrap.AssemblerException;
+import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.composite.CompositeBuilder;
 import org.qi4j.test.AbstractQi4jTest;
@@ -76,7 +76,7 @@ public class Step2TestCase extends AbstractQi4jTest
     }
 
     public void assemble( ModuleAssembly module )
-        throws AssemblerException
+        throws AssemblyException
     {
         module.addComposites( VoyageComposite.class, CargoComposite.class, ShippingServiceComposite.class );
     }
