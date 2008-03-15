@@ -17,21 +17,22 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import static org.easymock.EasyMock.*;
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 import org.junit.Test;
-import org.qi4j.bootstrap.SingletonAssembler;
-import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.AssemblyException;
-import org.qi4j.spi.service.provider.SingletonInstanceProvider;
-import org.qi4j.spi.service.provider.Singleton;
-import org.qi4j.composite.Mixins;
+import org.qi4j.bootstrap.ModuleAssembly;
+import org.qi4j.bootstrap.SingletonAssembler;
 import org.qi4j.composite.Concerns;
-import org.qi4j.test.mock.MockPlayerMixin;
-import org.qi4j.test.mock.MockComposite;
+import org.qi4j.composite.Mixins;
 import org.qi4j.property.Property;
-import apple.awt.ClientPropertyApplicator;
+import org.qi4j.test.mock.MockComposite;
+import org.qi4j.test.mock.MockPlayerMixin;
 
 /**
  * Unit tests for SequencingConcern.
