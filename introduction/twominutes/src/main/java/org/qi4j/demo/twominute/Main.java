@@ -19,7 +19,8 @@ public class Main
         };
         CompositeBuilderFactory factory =
             assembler.getCompositeBuilderFactory();
-        Speaker speaker = factory.newComposite( PoliticianComposite.class );
+        Speaker speaker =
+            factory.newComposite( PoliticianComposite.class );
         System.out.println( speaker.sayHello() );
     }
 }

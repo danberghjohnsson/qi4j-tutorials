@@ -4,6 +4,6 @@ import org.qi4j.composite.Mixins;
 import org.qi4j.composite.Composite;
 
 @Mixins( SpeakerMixin.class )
-public interface PoliticianComposite extends Composite, Speaker  // ,..., other types,
+public interface PoliticianComposite extends Composite, Speaker  // +others
 {
 }
