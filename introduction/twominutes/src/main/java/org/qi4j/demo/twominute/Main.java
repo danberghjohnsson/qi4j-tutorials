@@ -14,12 +14,12 @@ public class Main
             public void assemble( ModuleAssembly assembly )
                 throws AssemblyException
             {
-                assembly.addComposites( CitizenComposite.class );
+                assembly.addComposites( PoliticianComposite.class );
             }
         };
         CompositeBuilderFactory factory =
             assembler.getCompositeBuilderFactory();
-        Speaker speaker = factory.newComposite( CitizenComposite.class );
+        Speaker speaker = factory.newComposite( PoliticianComposite.class );
         System.out.println( speaker.sayHello() );
     }
 }
