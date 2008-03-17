@@ -25,7 +25,7 @@ public class SequencingConcern
     implements ShippingService
 {
     @ConcernFor private ShippingService next;
-    @ThisCompositeAs private Sequence generator;
+    @ThisCompositeAs private HasSequence generator;
 
     public int makeBooking( Cargo cargo, Voyage voyage )
     {

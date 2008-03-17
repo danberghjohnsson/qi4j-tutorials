@@ -83,7 +83,7 @@ public class SequencingConcernTest
         ShippingService shippingService = createMock( ShippingService.class );
         Cargo cargo = createMock( Cargo.class );
         Voyage voyage = createMock( Voyage.class );
-        Sequence generator = createMock( Sequence.class );
+        HasSequence generator = createMock( HasSequence.class );
         Property<Integer> sequence = createMock( Property.class );
         expect( shippingService.makeBooking( cargo, voyage ) ).andReturn( 100 );
         expect( generator.sequence() ).andReturn( sequence ).anyTimes();
@@ -92,7 +92,7 @@ public class SequencingConcernTest
         replay( shippingService, cargo, voyage, generator, sequence );
         ShippingServiceTestComposite underTest = assembler.getCompositeBuilderFactory().newComposite( ShippingServiceTestComposite.class );
         underTest.useMock( shippingService ).forClass( ShippingService.class );
-        underTest.useMock( generator ).forClass( Sequence.class );
+        underTest.useMock( generator ).forClass( HasSequence.class );
         assertThat( "Booking result", underTest.makeBooking( cargo, voyage ), is( equalTo( 1000 ) ) );
         verify( shippingService, cargo, voyage, generator, sequence );
     }
@@ -100,7 +100,7 @@ public class SequencingConcernTest
     @Mixins( MockPlayerMixin.class )
     @Concerns( SequencingConcern.class )
     public static interface ShippingServiceTestComposite
-        extends ShippingService, Sequence, MockComposite
+        extends ShippingService, HasSequence, MockComposite
     {
     }
 
