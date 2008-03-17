@@ -19,7 +19,7 @@ public class Main
         };
         CompositeBuilderFactory factory =
             assembler.getCompositeBuilderFactory();
-        CitizenComposite citizen = factory.newComposite( CitizenComposite.class );
-        System.out.println( citizen.sayHello() );
+        Speaker speaker = factory.newComposite( CitizenComposite.class );
+        System.out.println( speaker.sayHello() );
     }
 }
