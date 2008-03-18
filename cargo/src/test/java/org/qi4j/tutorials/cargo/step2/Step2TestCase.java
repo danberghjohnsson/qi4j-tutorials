@@ -22,10 +22,10 @@ import org.junit.Test;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.composite.CompositeBuilder;
-import org.qi4j.test.Qi4jTestSetup;
+import org.qi4j.test.AbstractQi4jTest;
 
 public class Step2TestCase
-    extends Qi4jTestSetup
+    extends AbstractQi4jTest
 {
     private Voyage voyage;
     private ShippingService shippingService;
