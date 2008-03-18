@@ -17,17 +17,20 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
+import static org.junit.Assert.*;
+import org.junit.Test;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.composite.CompositeBuilder;
-import org.qi4j.test.AbstractQi4jTest;
+import org.qi4j.test.Qi4jTestSetup;
 
-public class Step2TestCase extends AbstractQi4jTest
+public class Step2TestCase
+    extends Qi4jTestSetup
 {
     private Voyage voyage;
     private ShippingService shippingService;
 
-    @Override protected void setUp() throws Exception
+    @Override public void setUp() throws Exception
     {
         super.setUp();
         CompositeBuilder<VoyageComposite> voyageBuilder = compositeBuilderFactory.newCompositeBuilder( VoyageComposite.class );
@@ -39,6 +42,7 @@ public class Step2TestCase extends AbstractQi4jTest
         shippingService = shippingBuilder.newInstance();
     }
 
+    @Test
     public void testOrdinaryBooking()
     {
         Cargo cargo1 = newCargo( 40 );
@@ -52,6 +56,7 @@ public class Step2TestCase extends AbstractQi4jTest
         assertEquals( 3, code );
     }
 
+    @Test
     public void testOverbooking()
     {
         Cargo cargo1 = newCargo( 100 );
@@ -62,6 +67,7 @@ public class Step2TestCase extends AbstractQi4jTest
         assertEquals( 2, code );
     }
 
+    @Test
     public void testTooMuch()
     {
         Cargo cargo1 = newCargo( 40 );
