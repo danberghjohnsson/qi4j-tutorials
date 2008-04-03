@@ -21,10 +21,9 @@ import org.qi4j.composite.Composite;
 import org.qi4j.composite.Concerns;
 import org.qi4j.composite.Mixins;
 import org.qi4j.library.framework.NoopMixin;
-import org.qi4j.library.framework.entity.PropertyMixin;
 
 @Concerns( { OverbookingConcern.class, SequencingConcern.class } )
-@Mixins( { PropertyMixin.class, NoopMixin.class } )
+@Mixins( { NoopMixin.class } )
 public interface ShippingServiceComposite extends ShippingService, Composite
 {
 }

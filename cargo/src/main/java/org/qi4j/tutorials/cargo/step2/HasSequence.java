@@ -13,11 +13,8 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import org.qi4j.composite.Mixins;
-import org.qi4j.library.framework.entity.PropertyMixin;
 import org.qi4j.property.Property;
 
-@Mixins( PropertyMixin.class )
 public interface HasSequence
 {
     Property<Integer> sequence();
