@@ -17,13 +17,9 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import static org.easymock.EasyMock.createMock;
-import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.verify;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.easymock.EasyMock.*;
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
 import org.junit.Test;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
@@ -88,7 +84,6 @@ public class SequencingConcernTest
         expect( shippingService.makeBooking( cargo, voyage ) ).andReturn( 100 );
         expect( generator.sequence() ).andReturn( sequence ).anyTimes();
         expect( sequence.get() ).andReturn( 1000 );
-        expect( sequence.set( 1001 ) ).andReturn( 1001 );
         replay( shippingService, cargo, voyage, generator, sequence );
         ShippingServiceTestComposite underTest = assembler.getCompositeBuilderFactory().newComposite( ShippingServiceTestComposite.class );
         underTest.useMock( shippingService ).forClass( ShippingService.class );
