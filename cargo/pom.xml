@@ -8,8 +8,8 @@
     <artifactId>master</artifactId>
     <version>0.1.0-SNAPSHOT</version>
   </parent>
-  <groupId>org.qi4j.tutorials</groupId>
-  <artifactId>qi4j-cargi</artifactId>
+  <groupId>org.qi4j.tutorial</groupId>
+  <artifactId>qi4j-cargo</artifactId>
   <name>Qi4J Tutorial - Cargo</name>
   <version>0.1.0-SNAPSHOT</version>
   <dependencies>
