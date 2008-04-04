@@ -17,20 +17,18 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import org.qi4j.composite.scope.ConcernFor;
+import org.qi4j.composite.ConcernOf;
 
 
-public class OverbookingConcern
+public class OverbookingConcern extends ConcernOf<ShippingService>
     implements ShippingService
 {
-    @ConcernFor private ShippingService next;
-
     public int makeBooking( Cargo cargo, Voyage voyage )
     {
         double cargoSize = cargo.size().get();
         double aleadyBookedSize = voyage.bookedCargoSize().get();
         double totalCapacity = voyage.capacity().get();
-        
+
         if( cargoSize + aleadyBookedSize > totalCapacity * 1.1 )
         {
             // Not allowed.
