@@ -8,8 +8,8 @@
 <h2>Results from Step1</h2>
 <ul>
     <li>For the Cargo and Voyage interfaces, we have introduced the <i>Property&lt;Double&gt;</i>.
-    <i>Property</i> is an explicitly supported type in Qi4j, which makes life a lot easier
-    for everyone involved.
+        <i>Property</i> is an explicitly supported type in Qi4j, which makes life a lot easier
+        for everyone involved.
     </li>
     <li>The SequenceGenerator has changed the name to "Sequence", since it doesn't handle the
         generation of new numbers. It is given <i>Property&lt;Integer&gt;</i> to hold the last
@@ -37,6 +37,7 @@
 </ul>
 
 <h3>The ShippingServiceComposite</h3>
+
 <p>
     The <i>ShippingServiceComposite</i> declares that the <i>PropertyMixin</i> and <i>NoopMixin</i>
     should be used as MixinType implementations. These are very generic and often re-used to avoid
@@ -46,6 +47,7 @@
     nothing useful, which <b>is</b> useful when the actual work of the method is done in the concerns
     and/or side effects.
 </p>
+
 <p>
     There is also a declaration of which concerns should be used, and the order is significant. The
     <i>SequencingConcern</i> is placed first, that means it will be invoked before the <i>OverbookingConcern</i>,
@@ -53,19 +55,22 @@
 </p>
 
 <h3>The OverbookingConcern</h3>
+
 <p>
     The <i>@ConcernFor</i> annotations marks the member where the underlying
     concerns will be injected, or ultimately the implementation of the <i>ShippingService</i>
     interface.
 </p>
+
 <p>
-    The <i>@ThisCompositeAs</i> annotation, marks a field that will be injected with
+    The <i>@This</i> annotation, marks a field that will be injected with
     an instance of the MixinType of that field. If the CompositeType of the composite that the
     concern belongs to exposes this type, then it points back to the current composite. Otherwise,
     a new mixin is added internally in the composite to fulfill this need.
 </p>
 
 <h2>Moving on</h2>
+
 <p>
 </p>
 </body>
