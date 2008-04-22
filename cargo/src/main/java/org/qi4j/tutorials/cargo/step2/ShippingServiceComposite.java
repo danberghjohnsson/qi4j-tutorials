@@ -20,7 +20,7 @@ package org.qi4j.tutorials.cargo.step2;
 import org.qi4j.composite.Composite;
 import org.qi4j.composite.Concerns;
 import org.qi4j.composite.Mixins;
-import org.qi4j.library.framework.NoopMixin;
+import org.qi4j.composite.NoopMixin;
 
 @Concerns( { OverbookingConcern.class, SequencingConcern.class } )
 @Mixins( { NoopMixin.class } )
