@@ -7,7 +7,7 @@
   </parent>
   <groupId>org.qi4j.tutorials</groupId>
   <artifactId>qi4j-introductions</artifactId>
-  <name>Qi4J Tutorial - Introductions</name>
+  <name>Qi4J Tutorial - Introduction (Build POM)</name>
   <version>0.2.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <!-- This POM is ONLY to initiate the modules to be built. -->
