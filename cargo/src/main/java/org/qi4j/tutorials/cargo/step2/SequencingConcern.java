@@ -18,7 +18,7 @@
 package org.qi4j.tutorials.cargo.step2;
 
 import org.qi4j.composite.ConcernOf;
-import org.qi4j.composite.scope.This;
+import org.qi4j.injection.scope.This;
 import org.qi4j.property.Property;
 
 public class SequencingConcern extends ConcernOf<ShippingService>
