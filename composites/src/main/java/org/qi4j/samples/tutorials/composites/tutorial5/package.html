@@ -1,0 +1,30 @@
+<body>
+<h1>Tutorial 5 - Constraints</h1>
+
+In this tutorial we will look at how to use Constraints. When we pass parameters to
+methods in regular Java code the only restriction we can make is to denote a type.
+Any other constraints on the input value, such as non-null, integer ranges, string regular
+expressions, and so on, cannot be expressed, and se we have to put this into Javadoc, and
+then manually add these checks in the implementation class.
+<p/>
+In Qi4j there is the option to use Constraints, which are further restrictions on the parameters.
+This is implemented by having an annotation that describes what the Constraint does, and then
+an implementation class that checks whether a specific value fulfills the Constraint or not.
+<p/>
+There are a number of pre-written constraints in Qi4j which you can use, and checking for null
+values is one of them. Since the HelloWorld code does this manually, let's replace it with the
+Constraint to simplify the code and better document the interface so that clients know what is
+expected.
+<p/>
+The only thing you have to do is add the annotation @NotNull to the method parameters you want to
+constrain. The annotation has a default implementation declared in it by using the @Constraints
+annotation. You can either just use this, which is the common case, or override it by declaring your
+own @Constraints annotation in the Composite type.
+<p/>
+Steps for this tutorial:
+<ol>
+    <li>Add @NotNull to the state parameters</li>
+    <li>Remove the manual parameter checks</li>
+</ol>
+</body>
+        
