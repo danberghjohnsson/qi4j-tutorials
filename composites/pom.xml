@@ -1,13 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.qi4j</groupId>
     <artifactId>qi4j</artifactId>
     <version>0.3-SNAPSHOT</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.qi4j.sample</groupId>
-  <artifactId>qi4j-sample-tutorials</artifactId>
-  <name>Qi4J Sample - Tutorials</name>
+  <groupId>org.qi4j.tutorial</groupId>
+  <artifactId>qi4j-composites</artifactId>
+  <name>Qi4J Tutorial - Composite</name>
   <version>0.3-SNAPSHOT</version>
   <build>
     <resources>
@@ -67,7 +70,7 @@
           <groups>
             <group>
               <title>Composite tutorials</title>
-              <packages>org.qi4j.samples.tutorials.composites*</packages>
+              <packages>org.qi4j.tutorials.composites*</packages>
             </group>
           </groups>
         </configuration>

@@ -56,7 +56,7 @@ public class SequencingConcernTest
         Voyage voyage = createMock( Voyage.class );
         expect( shippingService.makeBooking( cargo, voyage ) ).andReturn( -1000 );
         replay( shippingService, cargo, voyage );
-        ShippingServiceTestComposite underTest = assembler.getCompositeBuilderFactory().newComposite( ShippingServiceTestComposite.class );
+        ShippingServiceTestComposite underTest = assembler.compositeBuilderFactory().newComposite( ShippingServiceTestComposite.class );
         underTest.useMock( shippingService ).forClass( ShippingService.class );
         assertThat( "Booking result", underTest.makeBooking( cargo, voyage ), is( equalTo( -1000 ) ) );
         verify( shippingService, cargo, voyage );
@@ -85,7 +85,7 @@ public class SequencingConcernTest
         expect( generator.sequence() ).andReturn( sequence ).anyTimes();
         expect( sequence.get() ).andReturn( 1000 );
         replay( shippingService, cargo, voyage, generator, sequence );
-        ShippingServiceTestComposite underTest = assembler.getCompositeBuilderFactory().newComposite( ShippingServiceTestComposite.class );
+        ShippingServiceTestComposite underTest = assembler.compositeBuilderFactory().newComposite( ShippingServiceTestComposite.class );
         underTest.useMock( shippingService ).forClass( ShippingService.class );
         underTest.useMock( generator ).forClass( HasSequence.class );
         assertThat( "Booking result", underTest.makeBooking( cargo, voyage ), is( equalTo( 1000 ) ) );

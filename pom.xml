@@ -13,8 +13,8 @@
   <!-- This POM is ONLY to initiate the modules to be built. -->
   <modules>
     <module>introduction</module>
-<!--
+    <module>composites</module>
+    <module>recipe</module>
     <module>cargo</module>
--->
   </modules>
 </project>
