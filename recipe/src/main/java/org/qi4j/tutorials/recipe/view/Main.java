@@ -17,18 +17,18 @@ package org.qi4j.tutorials.recipe.view;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.PrintWriter;
-import org.qi4j.runtime.bootstrap.ApplicationFactoryImpl;
 import org.qi4j.bootstrap.Assembler;
+import org.qi4j.bootstrap.Energy4Java;
 import org.qi4j.bootstrap.LayerName;
 import org.qi4j.bootstrap.ModuleName;
 import org.qi4j.injection.scope.Service;
 import org.qi4j.library.rdf.RdfFactory;
 import org.qi4j.library.rdf.RdfFormat;
 import org.qi4j.object.ObjectBuilderFactory;
+import org.qi4j.structure.Application;
 import org.qi4j.tutorials.recipe.assembly.DomainAssembler;
 import org.qi4j.tutorials.recipe.assembly.InfrastructureAssembler;
 import org.qi4j.tutorials.recipe.assembly.ViewAssembler;
-import org.qi4j.structure.Application;
 
 /**
  * TODO
@@ -46,7 +46,8 @@ public class Main
     public Main()
         throws Exception
     {
-        final Application application = new ApplicationFactoryImpl().newApplication( new Assembler[][][]
+        Energy4Java boot = new Energy4Java();
+        final Application application = boot.newApplication( new Assembler[][][]
             {
                 {
                     {
