@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.SingletonAssembler;
+import org.qi4j.composite.CompositeBuilderFactory;
+import org.qi4j.composite.CompositeBuilder;
 
 public class HelloWorldTest
 {
@@ -23,7 +25,11 @@ public class HelloWorldTest
                 module.addComposites( HelloWorldComposite.class );
             }
         };
-        helloWorld = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class ).newInstance();
+        CompositeBuilderFactory builderFactory = assembly.compositeBuilderFactory();
+        CompositeBuilder<HelloWorldComposite> builder = builderFactory.newCompositeBuilder( HelloWorldComposite.class );
+        builder.stateOfComposite().name().set( "" );
+        builder.stateOfComposite().phrase().set( "" );
+        helloWorld = builder.newInstance();
     }
 
     @Test
