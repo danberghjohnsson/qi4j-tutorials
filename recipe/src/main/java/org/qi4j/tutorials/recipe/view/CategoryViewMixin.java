@@ -29,7 +29,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import org.qi4j.composite.Initializable;
-import org.qi4j.composite.InstantiationException;
+import org.qi4j.composite.ConstructionException;
 import org.qi4j.entity.UnitOfWork;
 import org.qi4j.entity.UnitOfWorkCompletionException;
 import org.qi4j.injection.scope.PropertyField;
@@ -45,7 +45,7 @@ public class CategoryViewMixin
 {
     private @PropertyField Property<String> name;
 
-    public void initialize() throws InstantiationException
+    public void initialize() throws ConstructionException
     {
         name.set( "CategoryEntity view" );
     }
