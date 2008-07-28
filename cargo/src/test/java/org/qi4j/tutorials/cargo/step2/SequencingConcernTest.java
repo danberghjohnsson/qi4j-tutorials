@@ -21,6 +21,7 @@ import static org.easymock.EasyMock.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
+import org.junit.Ignore;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.SingletonAssembler;
@@ -66,7 +67,7 @@ public class SequencingConcernTest
      * Tests that when shipping service succeeds to make the booking generator gets called and generated value is
      * returned.
      */
-    @Test
+    @Test @Ignore
     public void succesfulBooking()
     {
         SingletonAssembler assembler = new SingletonAssembler()

@@ -21,6 +21,7 @@ import org.qi4j.composite.Composite;
 import org.qi4j.composite.Concerns;
 import org.qi4j.composite.Mixins;
 import org.qi4j.composite.NoopMixin;
+import org.qi4j.property.PropertyMixin;
 
 @Concerns( { OverbookingConcern.class, SequencingConcern.class } )
 @Mixins( { NoopMixin.class } )

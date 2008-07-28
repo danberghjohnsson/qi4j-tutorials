@@ -29,7 +29,7 @@ public class OverbookingConcern extends ConcernOf<ShippingService>
         double aleadyBookedSize = voyage.bookedCargoSize().get();
         double totalCapacity = voyage.capacity().get();
 
-        if( cargoSize + aleadyBookedSize > totalCapacity * 1.1 )
+        if( cargoSize + aleadyBookedSize > totalCapacity )
         {
             // Not allowed.
             return -1;
