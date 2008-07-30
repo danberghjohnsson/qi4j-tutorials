@@ -1,6 +1,6 @@
 package org.qi4j.tutorials.composites.tutorial10;
 
-import org.qi4j.library.framework.constraint.annotation.NotNull;
+import org.qi4j.library.constraints.annotation.NotNull;
 import org.qi4j.property.Property;
 
 /**

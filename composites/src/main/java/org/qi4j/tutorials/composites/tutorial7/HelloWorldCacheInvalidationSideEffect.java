@@ -2,7 +2,7 @@ package org.qi4j.tutorials.composites.tutorial7;
 
 import org.qi4j.composite.SideEffectOf;
 import org.qi4j.injection.scope.This;
-import org.qi4j.library.framework.caching.InvocationCache;
+import org.qi4j.library.cache.InvocationCache;
 
 /**
  * When the properties are updated, clear the cache which
