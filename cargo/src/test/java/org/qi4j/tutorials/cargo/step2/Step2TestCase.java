@@ -17,7 +17,7 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
@@ -49,11 +49,11 @@ public class Step2TestCase
         Cargo cargo2 = newCargo( 40 );
         Cargo cargo3 = newCargo( 20 );
         int code = shippingService.makeBooking( cargo1, voyage );
-        assertEquals( 1, code );
+        assertEquals( 0, code );
         code = shippingService.makeBooking( cargo2, voyage );
-        assertEquals( 2, code );
+        assertEquals( 1, code );
         code = shippingService.makeBooking( cargo3, voyage );
-        assertEquals( 3, code );
+        assertEquals( 2, code );
     }
 
     @Test
@@ -62,9 +62,9 @@ public class Step2TestCase
         Cargo cargo1 = newCargo( 100 );
         Cargo cargo2 = newCargo( 9 );
         int code = shippingService.makeBooking( cargo1, voyage );
-        assertEquals( 1, code );
+        assertEquals( 0, code );
         code = shippingService.makeBooking( cargo2, voyage );
-        assertEquals( 2, code );
+        assertEquals( -1, code );
     }
 
     @Test
@@ -74,9 +74,9 @@ public class Step2TestCase
         Cargo cargo2 = newCargo( 40 );
         Cargo cargo3 = newCargo( 31 );
         int code = shippingService.makeBooking( cargo1, voyage );
-        assertEquals( 1, code );
+        assertEquals( 0, code );
         code = shippingService.makeBooking( cargo2, voyage );
-        assertEquals( 2, code );
+        assertEquals( 1, code );
         code = shippingService.makeBooking( cargo3, voyage );
         assertEquals( -1, code );
     }

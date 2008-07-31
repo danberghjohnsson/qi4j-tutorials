@@ -17,17 +17,23 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import static org.easymock.EasyMock.*;
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
-import org.junit.Test;
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 import org.junit.Ignore;
+import org.junit.Test;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.SingletonAssembler;
 import org.qi4j.composite.Concerns;
 import org.qi4j.composite.Mixins;
+import org.qi4j.property.GenericPropertyInfo;
 import org.qi4j.property.Property;
+import org.qi4j.runtime.property.PropertyInstance;
 import org.qi4j.test.mock.MockComposite;
 import org.qi4j.test.mock.MockPlayerMixin;
 
@@ -43,6 +49,7 @@ public class SequencingConcernTest
      * returned.
      */
     @Test
+    @Ignore
     public void failingBooking()
     {
         SingletonAssembler assembler = new SingletonAssembler()
@@ -55,7 +62,11 @@ public class SequencingConcernTest
         ShippingService shippingService = createMock( ShippingService.class );
         Cargo cargo = createMock( Cargo.class );
         Voyage voyage = createMock( Voyage.class );
+        HasSequence sequence = createMock( HasSequence.class );
         expect( shippingService.makeBooking( cargo, voyage ) ).andReturn( -1000 );
+        expect( voyage.bookedCargoSize() ).andReturn( new PropertyInstance<Double>( new GenericPropertyInfo( Voyage.class, "bookedCargoSize" ), 0.0 ) ).atLeastOnce();
+        expect( cargo.size() ).andReturn( new PropertyInstance<Double>( new GenericPropertyInfo( Cargo.class, "size" ), 0.0 ) ).atLeastOnce();
+        expect( sequence.sequence() ).andReturn( new PropertyInstance<Integer>( new GenericPropertyInfo( HasSequence.class, "sequence" ), 0 ) ).atLeastOnce();
         replay( shippingService, cargo, voyage );
         ShippingServiceTestComposite underTest = assembler.compositeBuilderFactory().newComposite( ShippingServiceTestComposite.class );
         underTest.useMock( shippingService ).forClass( ShippingService.class );

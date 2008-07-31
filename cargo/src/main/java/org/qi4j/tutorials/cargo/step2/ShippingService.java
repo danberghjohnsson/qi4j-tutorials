@@ -17,7 +17,11 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
+import org.qi4j.composite.Mixins;
+
+@Mixins( ShippingServiceMixin.class )
 public interface ShippingService
 {
     int makeBooking( Cargo cargo, Voyage voyage );
+
 }
