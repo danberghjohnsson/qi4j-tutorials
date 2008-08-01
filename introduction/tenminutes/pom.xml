@@ -7,7 +7,7 @@
   </parent>
   <groupId>org.qi4j.tutorial</groupId>
   <artifactId>qi4j-ten-minutes</artifactId>
-  <name>Qi4J Tutorial - Introduction - 10 minutes</name>
+  <name>Qi4j Tutorial - Introduction - 10 minutes</name>
   <version>0.3-SNAPSHOT</version>
   <dependencies>
     <dependency>
