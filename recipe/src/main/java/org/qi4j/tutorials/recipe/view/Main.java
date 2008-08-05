@@ -17,13 +17,14 @@ package org.qi4j.tutorials.recipe.view;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.PrintWriter;
+import org.openrdf.model.Statement;
 import org.qi4j.bootstrap.Assembler;
 import org.qi4j.bootstrap.Energy4Java;
 import org.qi4j.bootstrap.LayerName;
 import org.qi4j.bootstrap.ModuleName;
 import org.qi4j.injection.scope.Service;
-import org.qi4j.library.rdf.RdfFactory;
-import org.qi4j.library.rdf.RdfFormat;
+import org.qi4j.library.rdf.serializer.ApplicationSerializer;
+import org.qi4j.library.rdf.serializer.RdfXmlSerializer;
 import org.qi4j.object.ObjectBuilderFactory;
 import org.qi4j.structure.Application;
 import org.qi4j.tutorials.recipe.assembly.DomainAssembler;
@@ -83,9 +84,10 @@ public class Main
 //        outputMetadata( application );
     }
 
-    public void outputMetadata( Application binding )
+    public void outputMetadata( Application application )
         throws Exception
     {
-        RdfFactory.getInstance().serialize( binding, "urn:qi4j:sample/tutorials/recipe", RdfFormat.rdfxml, new PrintWriter( System.out ) );
+        Iterable<Statement> rdf = new ApplicationSerializer().serialize( application );
+        new RdfXmlSerializer().serialize( rdf, new PrintWriter( System.out ) );
     }
 }
