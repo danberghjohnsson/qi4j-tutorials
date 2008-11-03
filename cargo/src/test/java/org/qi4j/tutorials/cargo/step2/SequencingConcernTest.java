@@ -64,9 +64,9 @@ public class SequencingConcernTest
         Voyage voyage = createMock( Voyage.class );
         HasSequence sequence = createMock( HasSequence.class );
         expect( shippingService.makeBooking( cargo, voyage ) ).andReturn( -1000 );
-        expect( voyage.bookedCargoSize() ).andReturn( new PropertyInstance<Double>( new GenericPropertyInfo( Voyage.class, "bookedCargoSize" ), 0.0 ) ).atLeastOnce();
-        expect( cargo.size() ).andReturn( new PropertyInstance<Double>( new GenericPropertyInfo( Cargo.class, "size" ), 0.0 ) ).atLeastOnce();
-        expect( sequence.sequence() ).andReturn( new PropertyInstance<Integer>( new GenericPropertyInfo( HasSequence.class, "sequence" ), 0 ) ).atLeastOnce();
+        expect( voyage.bookedCargoSize() ).andReturn( new PropertyInstance<Double>( new GenericPropertyInfo( Voyage.class, "bookedCargoSize" ), 0.0, null ) ).atLeastOnce();
+        expect( cargo.size() ).andReturn( new PropertyInstance<Double>( new GenericPropertyInfo( Cargo.class, "size" ), 0.0, null ) ).atLeastOnce();
+        expect( sequence.sequence() ).andReturn( new PropertyInstance<Integer>( new GenericPropertyInfo( HasSequence.class, "sequence" ), 0, null ) ).atLeastOnce();
         replay( shippingService, cargo, voyage );
         ShippingServiceTestComposite underTest = assembler.compositeBuilderFactory().newComposite( ShippingServiceTestComposite.class );
         underTest.useMock( shippingService ).forClass( ShippingService.class );
