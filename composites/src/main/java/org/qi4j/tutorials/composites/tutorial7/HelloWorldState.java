@@ -14,11 +14,11 @@ import org.qi4j.library.constraints.annotation.NotNull;
  */
 public interface HelloWorldState
 {
-    void setPhrase(@NotNull String phrase)
+    void setPhrase(String phrase)
         throws IllegalArgumentException;
     String getPhrase();
 
-    void setName(@NotNull String name)
+    void setName(String name)
         throws IllegalArgumentException;
     String getName();
 }
