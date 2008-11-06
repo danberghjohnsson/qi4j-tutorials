@@ -1,7 +1,5 @@
 package org.qi4j.tutorials.composites.tutorial7;
 
-import org.qi4j.library.constraints.annotation.NotNull;
-
 /**
  * This interface contains only the state
  * of the HelloWorld object.

@@ -1,6 +1,5 @@
 package org.qi4j.tutorials.composites.tutorial6;
 
-import org.qi4j.library.constraints.annotation.NotNull;
 import org.qi4j.composite.Mixins;
 
 /**

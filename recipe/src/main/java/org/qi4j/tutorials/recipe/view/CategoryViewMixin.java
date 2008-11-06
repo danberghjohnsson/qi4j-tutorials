@@ -101,7 +101,7 @@ public class CategoryViewMixin
                     JPanel showPanel = new JPanel( new BorderLayout() );
                     showPanel.add( editPanel, BorderLayout.SOUTH );
 
-                    UnitOfWork dialogUnitOfWork = unitOfWork.newUnitOfWork();
+                    UnitOfWork dialogUnitOfWork = unitOfWork.module().unitOfWorkFactory().nestedUnitOfWork();
                     Category category = dialogUnitOfWork.dereference( categoryList.get( list.getSelectedIndex() ) );
                     PropertyBinder binder = new PropertyBinder();
 

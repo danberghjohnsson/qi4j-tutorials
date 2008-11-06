@@ -1,6 +1,5 @@
 package org.qi4j.tutorials.composites.tutorial9;
 
-import org.qi4j.library.constraints.annotation.NotNull;
 import org.qi4j.property.Property;
 
 /**
@@ -15,6 +14,6 @@ import org.qi4j.property.Property;
  */
 public interface HelloWorldState
 {
-    @NotNull Property<String> phrase();
-    @NotNull Property<String> name();
+    Property<String> phrase();
+    Property<String> name();
 }
