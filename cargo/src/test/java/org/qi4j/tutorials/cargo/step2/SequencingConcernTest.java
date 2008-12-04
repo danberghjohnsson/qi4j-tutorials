@@ -49,7 +49,7 @@ public class SequencingConcernTest
      * returned.
      */
     @Test
-    @Ignore
+    @Ignore( "Expectations need to be figured out.")
     public void failingBooking()
     {
         SingletonAssembler assembler = new SingletonAssembler()
@@ -79,7 +79,7 @@ public class SequencingConcernTest
      * returned.
      */
     @Test
-    @Ignore
+    @Ignore( "Expectations need to be figured out.")
     public void succesfulBooking()
     {
         SingletonAssembler assembler = new SingletonAssembler()
