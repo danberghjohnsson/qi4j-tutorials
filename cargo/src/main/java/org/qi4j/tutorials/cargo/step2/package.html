@@ -57,16 +57,7 @@
 <h3>The OverbookingConcern</h3>
 
 <p>
-    The <i>@ConcernFor</i> annotations marks the member where the underlying
-    concerns will be injected, or ultimately the implementation of the <i>ShippingService</i>
-    interface.
-</p>
-
-<p>
-    The <i>@This</i> annotation, marks a field that will be injected with
-    an instance of the MixinType of that field. If the CompositeType of the composite that the
-    concern belongs to exposes this type, then it points back to the current composite. Otherwise,
-    a new mixin is added internally in the composite to fulfill this need.
+    It extends <i>ConcernOf</i> to show which MixinType it is chained into.
 </p>
 
 <h2>Moving on</h2>
