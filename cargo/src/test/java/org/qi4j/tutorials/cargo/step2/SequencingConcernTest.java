@@ -78,7 +78,8 @@ public class SequencingConcernTest
      * Tests that when shipping service succeeds to make the booking generator gets called and generated value is
      * returned.
      */
-    @Test @Ignore
+    @Test
+    @Ignore
     public void succesfulBooking()
     {
         SingletonAssembler assembler = new SingletonAssembler()
