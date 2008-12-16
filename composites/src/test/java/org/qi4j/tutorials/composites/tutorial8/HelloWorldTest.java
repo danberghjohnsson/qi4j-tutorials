@@ -8,8 +8,8 @@ import org.junit.Test;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.SingletonAssembler;
-import org.qi4j.composite.CompositeBuilder;
-import org.qi4j.composite.CompositeBuilderFactory;
+import org.qi4j.api.composite.CompositeBuilder;
+import org.qi4j.api.composite.CompositeBuilderFactory;
 
 public class HelloWorldTest
 {

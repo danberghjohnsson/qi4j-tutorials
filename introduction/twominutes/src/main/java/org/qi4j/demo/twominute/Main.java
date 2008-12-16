@@ -3,7 +3,7 @@ package org.qi4j.demo.twominute;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.SingletonAssembler;
-import org.qi4j.composite.CompositeBuilderFactory;
+import org.qi4j.api.composite.CompositeBuilderFactory;
 
 public class Main
 {

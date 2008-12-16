@@ -16,11 +16,11 @@ package org.qi4j.tutorials.composites.tutorial9;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import org.qi4j.composite.AppliesTo;
-import org.qi4j.composite.AppliesToFilter;
-import org.qi4j.composite.State;
-import org.qi4j.injection.scope.PropertyField;
-import org.qi4j.property.Property;
+import org.qi4j.api.common.AppliesTo;
+import org.qi4j.api.common.AppliesToFilter;
+import org.qi4j.api.property.StateHolder;
+import org.qi4j.api.injection.scope.PropertyField;
+import org.qi4j.api.property.Property;
 
 /**
  * TODO
@@ -29,7 +29,7 @@ import org.qi4j.property.Property;
 public class GenericPropertyMixin
     implements InvocationHandler
 {
-    @PropertyField State state;
+    @PropertyField StateHolder state;
 
     public Object invoke( Object proxy, Method method, Object[] args )
         throws Throwable

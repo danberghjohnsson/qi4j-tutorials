@@ -17,7 +17,7 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import org.qi4j.property.Property;
+import org.qi4j.api.property.Property;
 
 public interface Cargo
 {

@@ -15,8 +15,8 @@
 package org.qi4j.tutorials.recipe.domain;
 
 import java.util.Date;
-import org.qi4j.entity.association.Association;
-import org.qi4j.property.Property;
+import org.qi4j.api.entity.association.Association;
+import org.qi4j.api.property.Property;
 
 /**
  * TODO

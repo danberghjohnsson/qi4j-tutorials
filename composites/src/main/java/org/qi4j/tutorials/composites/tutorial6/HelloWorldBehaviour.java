@@ -1,7 +1,7 @@
 package org.qi4j.tutorials.composites.tutorial6;
 
-import org.qi4j.composite.Concerns;
-import org.qi4j.composite.Mixins;
+import org.qi4j.api.concern.Concerns;
+import org.qi4j.api.mixin.Mixins;
 
 /**
  * This interface contains only the behaviour

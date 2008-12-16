@@ -20,7 +20,7 @@ import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.tutorials.recipe.domain.Category;
 import org.qi4j.tutorials.recipe.domain.CategoryEntity;
 import org.qi4j.tutorials.recipe.domain.RecipeEntity;
-import static org.qi4j.structure.Visibility.*;
+import static org.qi4j.api.common.Visibility.*;
 
 /**
  * TODO

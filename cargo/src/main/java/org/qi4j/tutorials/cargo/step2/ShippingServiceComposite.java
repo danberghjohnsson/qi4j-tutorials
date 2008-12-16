@@ -17,8 +17,8 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import org.qi4j.composite.Composite;
-import org.qi4j.composite.Concerns;
+import org.qi4j.api.composite.Composite;
+import org.qi4j.api.concern.Concerns;
 
 @Concerns( { OverbookingConcern.class, SequencingConcern.class } )
 public interface ShippingServiceComposite extends ShippingService, Composite

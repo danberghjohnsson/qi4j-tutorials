@@ -14,7 +14,7 @@
 
 package org.qi4j.tutorials.recipe.domain;
 
-import org.qi4j.property.Property;
+import org.qi4j.api.property.Property;
 
 /**
  * TODO

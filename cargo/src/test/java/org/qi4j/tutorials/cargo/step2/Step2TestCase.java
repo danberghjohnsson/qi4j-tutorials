@@ -21,7 +21,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
-import org.qi4j.composite.CompositeBuilder;
+import org.qi4j.api.composite.CompositeBuilder;
 import org.qi4j.test.AbstractQi4jTest;
 
 public class Step2TestCase

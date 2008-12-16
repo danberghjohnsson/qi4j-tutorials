@@ -1,8 +1,8 @@
 package org.qi4j.tutorials.composites.tutorial7;
 
-import org.qi4j.composite.Composite;
-import org.qi4j.composite.Mixins;
-import org.qi4j.composite.SideEffects;
+import org.qi4j.api.composite.Composite;
+import org.qi4j.api.mixin.Mixins;
+import org.qi4j.api.sideeffect.SideEffects;
 
 /**
  * This Composite interface declares transitively

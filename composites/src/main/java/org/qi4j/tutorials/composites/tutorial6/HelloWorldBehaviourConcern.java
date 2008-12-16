@@ -1,6 +1,6 @@
 package org.qi4j.tutorials.composites.tutorial6;
 
-import org.qi4j.composite.ConcernOf;
+import org.qi4j.api.concern.ConcernOf;
 
 /**
  * This Concern validates the parameters

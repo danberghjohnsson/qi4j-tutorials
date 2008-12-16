@@ -28,12 +28,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-import org.qi4j.composite.Initializable;
-import org.qi4j.composite.ConstructionException;
-import org.qi4j.entity.UnitOfWork;
-import org.qi4j.entity.UnitOfWorkCompletionException;
-import org.qi4j.injection.scope.PropertyField;
-import org.qi4j.property.Property;
+import org.qi4j.api.mixin.Initializable;
+import org.qi4j.api.composite.ConstructionException;
+import org.qi4j.api.unitofwork.UnitOfWork;
+import org.qi4j.api.unitofwork.UnitOfWorkCompletionException;
+import org.qi4j.api.injection.scope.PropertyField;
+import org.qi4j.api.property.Property;
 import org.qi4j.tutorials.recipe.domain.Category;
 import org.qi4j.tutorials.recipe.domain.CategoryEntity;
 
@@ -101,7 +101,7 @@ public class CategoryViewMixin
                     JPanel showPanel = new JPanel( new BorderLayout() );
                     showPanel.add( editPanel, BorderLayout.SOUTH );
 
-                    UnitOfWork dialogUnitOfWork = unitOfWork.module().unitOfWorkFactory().nestedUnitOfWork();
+                    UnitOfWork dialogUnitOfWork = unitOfWork.unitOfWorkFactory().nestedUnitOfWork();
                     Category category = dialogUnitOfWork.dereference( categoryList.get( list.getSelectedIndex() ) );
                     PropertyBinder binder = new PropertyBinder();
 

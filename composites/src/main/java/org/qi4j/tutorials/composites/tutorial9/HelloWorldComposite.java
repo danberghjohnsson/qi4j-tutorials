@@ -1,7 +1,7 @@
 package org.qi4j.tutorials.composites.tutorial9;
 
-import org.qi4j.composite.Mixins;
-import org.qi4j.composite.Composite;
+import org.qi4j.api.mixin.Mixins;
+import org.qi4j.api.composite.Composite;
 
 /**
  * This Composite interface declares transitively

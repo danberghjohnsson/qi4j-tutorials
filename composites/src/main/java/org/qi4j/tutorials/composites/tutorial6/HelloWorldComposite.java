@@ -1,6 +1,6 @@
 package org.qi4j.tutorials.composites.tutorial6;
 
-import org.qi4j.composite.Composite;
+import org.qi4j.api.composite.Composite;
 
 /**
  * This Composite interface declares transitively

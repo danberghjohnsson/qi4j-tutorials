@@ -18,7 +18,7 @@ import java.awt.Component;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import javax.swing.JTextField;
-import org.qi4j.property.Property;
+import org.qi4j.api.property.Property;
 
 /**
  * Bind properties to Swing components. Updates the Property

@@ -1,6 +1,6 @@
 package org.qi4j.tutorials.composites.tutorial4;
 
-import org.qi4j.composite.Composite;
+import org.qi4j.api.composite.Composite;
 
 /**
  * This Composite interface declares all the Fragments

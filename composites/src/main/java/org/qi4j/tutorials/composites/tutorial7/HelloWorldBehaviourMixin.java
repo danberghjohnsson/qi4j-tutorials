@@ -1,6 +1,6 @@
 package org.qi4j.tutorials.composites.tutorial7;
 
-import org.qi4j.injection.scope.This;
+import org.qi4j.api.injection.scope.This;
 
 /**
  * This is the implementation of the HelloWorld
