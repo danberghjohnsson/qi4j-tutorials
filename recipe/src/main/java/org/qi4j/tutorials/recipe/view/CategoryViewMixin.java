@@ -29,7 +29,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import org.qi4j.api.mixin.Initializable;
-import org.qi4j.api.composite.ConstructionException;
+import org.qi4j.api.common.ConstructionException;
 import org.qi4j.api.unitofwork.UnitOfWork;
 import org.qi4j.api.unitofwork.UnitOfWorkCompletionException;
 import org.qi4j.api.injection.scope.PropertyField;
