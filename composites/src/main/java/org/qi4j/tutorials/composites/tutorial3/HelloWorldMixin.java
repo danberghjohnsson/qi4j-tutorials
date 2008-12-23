@@ -2,7 +2,8 @@ package org.qi4j.tutorials.composites.tutorial3;
 
 /**
  * This is the implementation of the HelloWorld
- * interface. The behaviour and state is mixed.
+ * interface. The behaviour and state is mixed. Since parameters
+ * are mandatory as default in Qi4j there's no need to do null checks.
  */
 public class HelloWorldMixin
     implements HelloWorld
@@ -21,13 +22,7 @@ public class HelloWorldMixin
     }
 
     public void setPhrase( String phrase )
-        throws IllegalArgumentException
     {
-        if( phrase == null )
-        {
-            throw new IllegalArgumentException( "Phrase may not be null " );
-        }
-
         this.phrase = phrase;
     }
 
@@ -37,13 +32,7 @@ public class HelloWorldMixin
     }
 
     public void setName( String name )
-        throws IllegalArgumentException
     {
-        if( name == null )
-        {
-            throw new IllegalArgumentException( "Name may not be null " );
-        }
-
         this.name = name;
     }
 }

@@ -9,6 +9,9 @@ In this tutorial we will only use Mixins. When a Composite is instantiated at ru
 the framework will inspect the interface to determine what the Composite instance should
 look like in terms of used Fragments.
 <p/>
+In Qi4j all method parameters are considered mandatory unless marked as @Optional. Therefore you can
+remove the null checks in the Mixin. If a null value is passed in an exception will be thrown by Qi4j.
+<p/>
 Steps for this tutorial:
 <ol>
     <li>Create an interface that extends the domain interface HelloWorld and org.qi4j.composite.Composite</li>

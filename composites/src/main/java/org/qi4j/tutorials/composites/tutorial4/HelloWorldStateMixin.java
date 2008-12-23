@@ -2,8 +2,7 @@ package org.qi4j.tutorials.composites.tutorial4;
 
 /**
  * This is the implementation of the HelloWorld
- * state interface. The parameter validation is still
- * mixed with the state management.
+ * state interface.
  */
 public class HelloWorldStateMixin
     implements HelloWorldState
@@ -17,13 +16,7 @@ public class HelloWorldStateMixin
     }
 
     public void setPhrase( String phrase )
-        throws IllegalArgumentException
     {
-        if( phrase == null )
-        {
-            throw new IllegalArgumentException( "Phrase may not be null " );
-        }
-
         this.phrase = phrase;
     }
 
@@ -33,13 +26,7 @@ public class HelloWorldStateMixin
     }
 
     public void setName( String name )
-        throws IllegalArgumentException
     {
-        if( name == null )
-        {
-            throw new IllegalArgumentException( "Name may not be null " );
-        }
-
         this.name = name;
     }
 }

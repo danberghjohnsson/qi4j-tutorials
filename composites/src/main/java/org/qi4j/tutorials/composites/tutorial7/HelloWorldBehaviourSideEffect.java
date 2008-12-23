@@ -3,8 +3,7 @@ package org.qi4j.tutorials.composites.tutorial7;
 import org.qi4j.api.sideeffect.SideEffectOf;
 
 /**
- * When the properties are updated, clear the cache which
- * is used by the say() method.
+ * As a side-effect of calling say, output the result.
  */
 public class HelloWorldBehaviourSideEffect extends SideEffectOf<HelloWorldBehaviour>
     implements HelloWorldBehaviour

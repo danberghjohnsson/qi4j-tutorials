@@ -5,10 +5,10 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
+import org.qi4j.api.composite.CompositeBuilder;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.SingletonAssembler;
-import org.qi4j.api.composite.CompositeBuilder;
 
 public class HelloWorldTest
 {
@@ -63,6 +63,19 @@ public class HelloWorldTest
         {
             // Ok
         }
+
+        try
+        {
+            CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
+            builder.stateFor( HelloWorldState.class ).phrase().set( "" );
+            HelloWorldComposite helloWorld = builder.newInstance();
+
+            fail( "Should not be allowed to set phrase to empty string" );
+        }
+        catch( IllegalArgumentException e )
+        {
+            // Ok
+        }
     }
 
     @Test
@@ -75,6 +88,19 @@ public class HelloWorldTest
             HelloWorldComposite helloWorld = builder.newInstance();
 
             fail( "Should not be allowed to set phrase to null" );
+        }
+        catch( IllegalArgumentException e )
+        {
+            // Ok
+        }
+
+        try
+        {
+            CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
+            builder.stateFor( HelloWorldState.class ).name().set( "" );
+            HelloWorldComposite helloWorld = builder.newInstance();
+
+            fail( "Should not be allowed to set phrase to empty string" );
         }
         catch( IllegalArgumentException e )
         {

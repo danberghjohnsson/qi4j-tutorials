@@ -6,19 +6,13 @@ package org.qi4j.tutorials.composites.tutorial6;
 
 /**
  * This is the implementation of the HelloWorld
- * state interface. The parameter validation is still
- * mixed with the state management.
+ * state interface.
  */
 public class HelloWorldStateMixin
     implements HelloWorldState
 {
     String phrase;
     String name;
-
-    public String say()
-    {
-        return phrase + " " + name;
-    }
 
     public String getPhrase()
     {

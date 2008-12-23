@@ -1,25 +1,23 @@
 package org.qi4j.tutorials.composites.tutorial6;
 
 import org.qi4j.api.mixin.Mixins;
+import org.qi4j.library.constraints.annotation.NotEmpty;
 
 /**
  * This interface contains only the state
  * of the HelloWorld object.
  * <p/>
- * It declares the standard generic Mixin
- * as default implementation.
- * <p/>
- * Since there is no specific Mixin for this
- * interface the Concern is declared here.
+ * The parameters are declared as @NotEmpty, so the client cannot pass in empty strings
+ * as values.
  */
 @Mixins( HelloWorldStateMixin.class )
 public interface HelloWorldState
 {
-    void setPhrase(String phrase)
+    void setPhrase(@NotEmpty String phrase)
         throws IllegalArgumentException;
     String getPhrase();
 
-    void setName(String name)
+    void setName(@NotEmpty String name)
         throws IllegalArgumentException;
     String getName();
 }

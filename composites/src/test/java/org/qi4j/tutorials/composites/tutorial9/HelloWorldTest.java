@@ -5,11 +5,11 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
+import org.qi4j.api.composite.CompositeBuilder;
+import org.qi4j.api.composite.CompositeBuilderFactory;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.SingletonAssembler;
-import org.qi4j.api.composite.CompositeBuilderFactory;
-import org.qi4j.api.composite.CompositeBuilder;
 
 public class HelloWorldTest
 {
@@ -27,21 +27,14 @@ public class HelloWorldTest
         };
         CompositeBuilderFactory builderFactory = assembly.compositeBuilderFactory();
         CompositeBuilder<HelloWorldComposite> builder = builderFactory.newCompositeBuilder( HelloWorldComposite.class );
-        builder.stateOfComposite().name().set( "" );
-        builder.stateOfComposite().phrase().set( "" );
+        builder.stateOfComposite().name().set( "Hello" );
+        builder.stateOfComposite().phrase().set( "World" );
         helloWorld = builder.newInstance();
     }
 
     @Test
     public void givenHelloWorldWhenSetPropertiesAndSayThenReturnCorrectResult()
     {
-        {
-            helloWorld.phrase().set( "Hello" );
-            helloWorld.name().set( "World" );
-            String result = helloWorld.say();
-            assertThat( result, equalTo( "Hello World" ) );
-        }
-
         {
             helloWorld.phrase().set( "Hey" );
             helloWorld.name().set( "Universe" );
@@ -62,6 +55,16 @@ public class HelloWorldTest
         {
             // Ok
         }
+
+        try
+        {
+            helloWorld.phrase().set( "" );
+            fail( "Should not be allowed to set phrase to empty string" );
+        }
+        catch( IllegalArgumentException e )
+        {
+            // Ok
+        }
     }
 
     @Test
@@ -71,6 +74,16 @@ public class HelloWorldTest
         {
             helloWorld.name().set( null );
             fail( "Should not be allowed to set name to null" );
+        }
+        catch( IllegalArgumentException e )
+        {
+            // Ok
+        }
+
+        try
+        {
+            helloWorld.name().set( "" );
+            fail( "Should not be allowed to set name to empty string" );
         }
         catch( IllegalArgumentException e )
         {

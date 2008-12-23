@@ -9,8 +9,7 @@ import org.qi4j.api.property.Property;
 
 /**
  * This is the implementation of the HelloWorld
- * state interface. The parameter validation is still
- * mixed with the state management.
+ * state interface.
  */
 public class HelloWorldStateMixin
     implements HelloWorldState

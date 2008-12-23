@@ -7,7 +7,7 @@ import org.qi4j.api.injection.scope.This;
  * This is the implementation of the HelloWorld
  * behaviour interface.
  * <p/>
- * It uses a @ThisAs Dependency Injection
+ * It uses a @This Dependency Injection
  * annotation to access the state of the Composite. The field
  * will be automatically injected when the Composite
  * is instantiated. Injections of resources or references

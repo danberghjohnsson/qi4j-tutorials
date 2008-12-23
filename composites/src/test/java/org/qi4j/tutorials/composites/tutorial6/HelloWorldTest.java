@@ -56,6 +56,16 @@ public class HelloWorldTest
         {
             // Ok
         }
+
+        try
+        {
+            helloWorld.setPhrase( "" );
+            fail( "Should not be allowed to set phrase to empty string" );
+        }
+        catch( IllegalArgumentException e )
+        {
+            // Ok
+        }
     }
 
     @Test
@@ -65,6 +75,16 @@ public class HelloWorldTest
         {
             helloWorld.setName( null );
             fail( "Should not be allowed to set name to null" );
+        }
+        catch( IllegalArgumentException e )
+        {
+            // Ok
+        }
+
+        try
+        {
+            helloWorld.setName( "" );
+            fail( "Should not be allowed to set name to empty string" );
         }
         catch( IllegalArgumentException e )
         {
