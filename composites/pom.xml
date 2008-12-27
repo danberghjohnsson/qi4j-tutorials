@@ -32,6 +32,12 @@
       <version>0.5-SNAPSHOT</version>
     </dependency>
     <dependency>
+      <groupId>org.qi4j.core</groupId>
+      <artifactId>qi4j-core-runtime</artifactId>
+      <version>0.5-SNAPSHOT</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
       <groupId>org.qi4j.library</groupId>
       <artifactId>qi4j-lib-cache</artifactId>
       <version>0.5-SNAPSHOT</version>
