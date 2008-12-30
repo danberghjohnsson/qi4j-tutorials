@@ -39,11 +39,6 @@
     </dependency>
     <dependency>
       <groupId>org.qi4j.library</groupId>
-      <artifactId>qi4j-lib-cache</artifactId>
-      <version>0.5-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.qi4j.library</groupId>
       <artifactId>qi4j-lib-constraints</artifactId>
       <version>0.5-SNAPSHOT</version>
     </dependency>

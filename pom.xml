@@ -14,6 +14,7 @@
   <modules>
     <module>introduction</module>
     <module>composites</module>
+    <module>services</module>
     <module>recipe</module>
     <module>cargo</module>
   </modules>
