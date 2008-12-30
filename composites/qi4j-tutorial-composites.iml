@@ -16,8 +16,6 @@
     <orderEntry type="module" module-name="qi4j-core-spi" exported="" />
     <orderEntry type="module" module-name="qi4j-core-runtime" exported="" />
     <orderEntry type="library" exported="" name="Maven: cglib:cglib-nodep:2.1_3" level="project" />
-    <orderEntry type="module" module-name="qi4j-lib-cache" exported="" />
-    <orderEntry type="module" module-name="qi4j-lib-beans" exported="" />
     <orderEntry type="module" module-name="qi4j-lib-constraints" exported="" />
     <orderEntry type="module" module-name="qi4j-core-testsupport" />
     <orderEntry type="library" name="Maven: junit:junit:4.4" level="project" />
