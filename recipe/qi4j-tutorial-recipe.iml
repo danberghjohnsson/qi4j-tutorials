@@ -18,6 +18,7 @@
     <orderEntry type="module" module-name="qi4j-core-runtime" exported="" />
     <orderEntry type="library" exported="" name="Maven: cglib:cglib-nodep:2.1_3" level="project" />
     <orderEntry type="module" module-name="qi4j-lib-framework" exported="" />
+    <orderEntry type="module" module-name="qi4j-ext-indexing-rdf" exported="" />
     <orderEntry type="module" module-name="qi4j-lib-rdf" exported="" />
     <orderEntry type="module" module-name="qi4j-lib-constraints" exported="" />
     <orderEntry type="module" module-name="qi4j-core-testsupport" />
@@ -73,7 +74,6 @@
     <orderEntry type="module" module-name="qi4j-script-jruby" exported="" />
     <orderEntry type="module" module-name="qi4j-script-common" exported="" />
     <orderEntry type="library" exported="" name="Maven: org.jruby:jruby:1.1" level="project" />
-    <orderEntry type="module" module-name="qi4j-ext-indexing-rdf" />
   </component>
 </module>
 
