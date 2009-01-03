@@ -30,7 +30,7 @@ public class DomainAssembler
 {
     public void assemble( ModuleAssembly module ) throws AssemblyException
     {
-        module.addComposites( CategoryEntity.class, RecipeEntity.class ).visibleIn( application );
+        module.addEntities( CategoryEntity.class, RecipeEntity.class ).visibleIn( application );
         module.on( Category.class ).to().name().set( "New category" );
     }
 }

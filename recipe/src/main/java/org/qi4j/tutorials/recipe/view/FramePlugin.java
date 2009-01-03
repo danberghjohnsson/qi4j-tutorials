@@ -17,13 +17,14 @@ package org.qi4j.tutorials.recipe.view;
 import java.awt.Component;
 import org.qi4j.api.unitofwork.UnitOfWork;
 import org.qi4j.api.property.Property;
+import org.qi4j.api.common.Optional;
 
 /**
  * TODO
  */
 public interface FramePlugin
 {
-    Property<String> name();
+    @Optional Property<String> name();
 
     Component activate( UnitOfWork unitOfWork );
 }

@@ -21,7 +21,6 @@ import org.qi4j.api.service.ServiceComposite;
  * TODO
  */
 @Mixins( CategoryViewMixin.class )
-public interface CategoryViewService
-    extends ServiceComposite, FramePlugin
+public interface CategoryViewService extends ServiceComposite, FramePlugin
 {
 }

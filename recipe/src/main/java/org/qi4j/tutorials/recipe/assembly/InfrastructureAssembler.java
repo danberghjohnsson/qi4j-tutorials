@@ -18,6 +18,7 @@ import org.qi4j.bootstrap.Assembler;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.entity.memory.MemoryEntityStoreService;
+import org.qi4j.entity.index.rdf.assembly.RdfMemoryStoreAssembler;
 import org.qi4j.spi.entity.helpers.UuidIdentityGeneratorService;
 import org.qi4j.api.common.Visibility;
 
@@ -31,5 +32,6 @@ public class InfrastructureAssembler
     {
         module.addServices( UuidIdentityGeneratorService.class,
                             MemoryEntityStoreService.class ).visibleIn( Visibility.layer );
+        module.addAssembler( new RdfMemoryStoreAssembler() );
     }
 }
