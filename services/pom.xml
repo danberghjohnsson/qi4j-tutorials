@@ -6,7 +6,7 @@
     <version>0.5-SNAPSHOT</version>
   </parent>
   <groupId>org.qi4j.tutorial</groupId>
-  <artifactId>qi4j-services</artifactId>
+  <artifactId>qi4j-tutorial-services</artifactId>
   <name>Qi4j Tutorial - Service</name>
   <version>0.5-SNAPSHOT</version>
   <dependencies>
