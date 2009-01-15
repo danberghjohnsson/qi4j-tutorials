@@ -21,7 +21,7 @@ import org.qi4j.tutorials.services.tutorial3.SomeSimple;
 import org.qi4j.tutorials.services.tutorial3.SomeSimpleMixin;
 
 /**
- * TODO
+ * Service composite defining the service.
  */
 @Mixins( SomeSimpleMixin.class)
 public interface SomeSimpleService

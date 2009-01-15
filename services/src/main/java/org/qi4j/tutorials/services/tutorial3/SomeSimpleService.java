@@ -18,7 +18,7 @@ import org.qi4j.api.mixin.Mixins;
 import org.qi4j.api.service.ServiceComposite;
 
 /**
- * TODO
+ * Service composite defining the service.
  */
 @Mixins(SomeSimpleMixin.class)
 public interface SomeSimpleService

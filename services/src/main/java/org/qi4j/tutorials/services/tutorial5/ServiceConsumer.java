@@ -12,29 +12,23 @@
  *
  */
 
-package org.qi4j.tutorials.services.tutorial4;
+package org.qi4j.tutorials.services.tutorial5;
 
-import org.qi4j.api.service.Activatable;
+import org.qi4j.api.injection.scope.Structure;
+import org.qi4j.api.service.ServiceFinder;
 import org.qi4j.tutorials.services.tutorial3.SomeSimple;
 
 /**
- * Implementation of the service interface.
+ * Simple service consumer. The service is looked up using the finder.
  */
-public class SomeSimpleMixin
-    implements SomeSimple, Activatable
+public class ServiceConsumer
+    implements Runnable
 {
-    public String doService(String someParam, String otherParam)
-    {
-        return someParam+" "+otherParam;
-    }
+    @Structure ServiceFinder finder;
 
-    public void activate() throws Exception
+    public void run()
     {
-        System.out.println("Activated");
-    }
-
-    public void passivate() throws Exception
-    {
-        System.out.println("Passivated");
+        SomeSimple someSimpleService = finder.findService( SomeSimple.class ).get();
+        someSimpleService.doService( "Hello", "World" );
     }
 }

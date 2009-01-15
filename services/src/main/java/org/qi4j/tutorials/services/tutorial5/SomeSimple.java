@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007, Rickard Öberg. All Rights Reserved.
+ * Copyright (c) 2008, Rickard Öberg. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11,13 +11,13 @@
  * limitations under the License.
  *
  */
-package org.qi4j.tutorials.cargo.step2;
 
-import org.qi4j.api.common.UseDefaults;
-import org.qi4j.api.property.Property;
+package org.qi4j.tutorials.services.tutorial5;
 
-public interface HasSequence
+/**
+ * Simple service interface. This is the public API of the service.
+ */
+public interface SomeSimple
 {
-    @UseDefaults
-    Property<Integer> sequence();
+    public String doService(String someParam, String otherParam);
 }

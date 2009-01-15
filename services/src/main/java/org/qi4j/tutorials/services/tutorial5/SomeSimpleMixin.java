@@ -12,7 +12,7 @@
  *
  */
 
-package org.qi4j.tutorials.services.tutorial4;
+package org.qi4j.tutorials.services.tutorial5;
 
 import org.qi4j.api.service.Activatable;
 import org.qi4j.tutorials.services.tutorial3.SomeSimple;

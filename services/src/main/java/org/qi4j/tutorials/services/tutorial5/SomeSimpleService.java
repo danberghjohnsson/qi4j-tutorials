@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007, Rickard Öberg. All Rights Reserved.
+ * Copyright (c) 2008, Rickard Öberg. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11,13 +11,20 @@
  * limitations under the License.
  *
  */
-package org.qi4j.tutorials.cargo.step2;
 
-import org.qi4j.api.common.UseDefaults;
-import org.qi4j.api.property.Property;
+package org.qi4j.tutorials.services.tutorial5;
 
-public interface HasSequence
+import org.qi4j.api.mixin.Mixins;
+import org.qi4j.api.service.Activatable;
+import org.qi4j.api.service.ServiceComposite;
+import org.qi4j.tutorials.services.tutorial3.SomeSimple;
+import org.qi4j.tutorials.services.tutorial3.SomeSimpleMixin;
+
+/**
+ * Service composite defining the service.
+ */
+@Mixins( SomeSimpleMixin.class)
+public interface SomeSimpleService
+    extends SomeSimple, ServiceComposite, Activatable
 {
-    @UseDefaults
-    Property<Integer> sequence();
 }

@@ -17,9 +17,11 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
+import org.qi4j.api.common.UseDefaults;
 import org.qi4j.api.property.Property;
 
 public interface Cargo
 {
+    @UseDefaults
     Property<Double> size();
 }

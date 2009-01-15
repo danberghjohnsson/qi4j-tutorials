@@ -15,7 +15,7 @@
 package org.qi4j.tutorials.services.tutorial3;
 
 /**
- * TODO
+ * Simple service interface. This is the public API of the service.
  */
 public interface SomeSimple
 {
