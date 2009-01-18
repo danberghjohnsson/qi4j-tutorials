@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2008, Your Corporation. All Rights Reserved.
- */
-
 package org.qi4j.tutorials.composites.tutorial7;
 
 /**
@@ -13,11 +9,6 @@ public class HelloWorldStateMixin
 {
     String phrase;
     String name;
-
-    public String say()
-    {
-        return phrase + " " + name;
-    }
 
     public String getPhrase()
     {

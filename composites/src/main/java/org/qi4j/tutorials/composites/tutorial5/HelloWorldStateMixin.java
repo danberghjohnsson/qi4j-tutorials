@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2008, Your Corporation. All Rights Reserved.
- */
-
 package org.qi4j.tutorials.composites.tutorial5;
 
 /**
@@ -20,7 +16,6 @@ public class HelloWorldStateMixin
     }
 
     public void setPhrase( String phrase )
-        throws IllegalArgumentException
     {
         this.phrase = phrase;
     }
@@ -31,7 +26,6 @@ public class HelloWorldStateMixin
     }
 
     public void setName( String name )
-        throws IllegalArgumentException
     {
         this.name = name;
     }

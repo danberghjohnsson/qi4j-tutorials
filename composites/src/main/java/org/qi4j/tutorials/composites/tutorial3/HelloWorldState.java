@@ -11,9 +11,11 @@ public interface HelloWorldState
 {
     void setPhrase(String phrase)
         throws IllegalArgumentException;
+
     String getPhrase();
 
     void setName(String name)
         throws IllegalArgumentException;
+    
     String getName();
 }
