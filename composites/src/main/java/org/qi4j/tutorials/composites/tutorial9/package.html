@@ -14,7 +14,7 @@ will mark this by declaring that the Mixin "implements" the Composite type, but 
 This, using pure Java semantics, makes it possible to avoid having to implement all methods. Qi4j
 will during the initialization phase detect that the Mixin only handles the say() method, and therefore
 only map it to that specific method. In order to instantiate the Mixin it will generate a subclass
-which implements the remainding methods in the Composite type, as no-ops. These will never be called however,
+which implements the remaining methods in the Composite type, as no-ops. These will never be called however,
 and is there purely for the purpose of being able to instantiate the Mixin. The Mixin is considered
 to be an Abstract Fragment.
 <p/>
@@ -33,11 +33,12 @@ than through publicly exposed methods.
 <p/>
 Steps for this tutorial:
 <ol>
-    <li>Move the say() method into the Composite interface</li>
-    <li>Remove the behaviour interface</li>
-    <li>Let the HelloWorldMixin implement the Composite directly</li>
-    <li>Mark the HelloWorldMixin as abstract and implement only the say() method</li>
-    <li>Remove the HelloWorldState from the Composite "extends" declaration</li>
+    <li>Move the say() method into the Composite interface.</li>
+    <li>Remove the behaviour interface.</li>
+    <li>Remove the HelloWorldBehaviourMixin, create a HelloWorldMixin and
+    let the HelloWorldMixin implement the Composite directly.</li>
+    <li>Mark the HelloWorldMixin as abstract and implement only the say() method.</li>
+    <li>Remove the HelloWorldState from the Composite "extends" declaration.</li>
     <li>Remove the GenericPropertyMixin. The Property methods will be implemented by the
     standard PropertyMixin declared in the Composite interface instead.</li>
 </ol>

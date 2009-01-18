@@ -4,7 +4,7 @@
 In this tutorial we will look at how to use Constraints. When we pass parameters to
 methods in regular Java code the only restriction we can make is to denote a type.
 Any other constraints on the input value, such as whether the parameter is optional, integer ranges,
-string regular expressions, and so on, cannot be expressed, and se we have to put this into Javadoc, and
+string regular expressions, and so on, cannot be expressed, and so we have to put this into Javadoc, and
 then manually add these checks in the implementation class.
 <p/>
 In Qi4j there is the option to use Constraints, which are further restrictions on the parameters.
@@ -25,7 +25,13 @@ You can add as many Constraint annotations you want to a parameter. All of them 
 <p/>
 Steps for this tutorial:
 <ol>
-    <li>Add @NotNull to the state parameters</li>
+    <li>Add @NotEmpty to the state parameters.</li>
 </ol>
+<p><em>Note:</em><br/>
+The previous steps had a dependency to the <code>qi4j-core-api</code> only. The constraints
+you've used in this step, introduce a new dependency to the <code>qi4j-lib-constraints</code>
+library, where all the constraint related classes reside. So update your classpath settings
+accordingly.
+</p>
 </body>
         
