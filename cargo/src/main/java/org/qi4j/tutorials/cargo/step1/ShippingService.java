@@ -17,8 +17,6 @@
  */
 package org.qi4j.tutorials.cargo.step1;
 
-import org.qi4j.tutorials.cargo.step1.internal.CargoImpl;
-import org.qi4j.tutorials.cargo.step1.internal.VoyageImpl;
 
 public interface ShippingService
 {
