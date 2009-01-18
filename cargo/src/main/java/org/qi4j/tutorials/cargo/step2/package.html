@@ -11,10 +11,9 @@
         <i>Property</i> is an explicitly supported type in Qi4j, which makes life a lot easier
         for everyone involved.
     </li>
-    <li>The SequenceGenerator has changed the name to "Sequence", since it doesn't handle the
+    <li>The SequenceGenerator has changed the name to "HasSequence", since it doesn't handle the
         generation of new numbers. It is given <i>Property&lt;Integer&gt;</i> to hold the last
         sequence number, but it doesn't handle the <i>next()</i> equivalent from Evans' code.
-        The SequenceMixin provides the implementation for the interface.
     </li>
     <li>
         The increment of the sequence number is instead handled in the SequencingConcern. One
@@ -39,17 +38,7 @@
 <h3>The ShippingServiceComposite</h3>
 
 <p>
-    The <i>ShippingServiceComposite</i> declares that the <i>PropertyMixin</i> and <i>NoopMixin</i>
-    should be used as MixinType implementations. These are very generic and often re-used to avoid
-    writing the MixinType implementation classes altogether. <i>PropertyMixin</i> handles all the
-    <i>Property<?></i> declarations, in this case just the <i>Property&lt;Integer&gt; sequence();</i>
-    in the <i>Sequence</i> MixinType. The <i>NoopMixin</i> is a generic implementation that returns
-    nothing useful, which <b>is</b> useful when the actual work of the method is done in the concerns
-    and/or side effects.
-</p>
-
-<p>
-    There is also a declaration of which concerns should be used, and the order is significant. The
+    The <i>ShippingServiceComposite</i> declares which concerns should be used, and the order is significant. The
     <i>SequencingConcern</i> is placed first, that means it will be invoked before the <i>OverbookingConcern</i>,
     but it performs its own work <b>after</b> the call to the <i>next.makeBooking()</i> method.
 </p>
