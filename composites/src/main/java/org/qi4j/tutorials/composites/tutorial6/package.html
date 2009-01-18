@@ -2,7 +2,7 @@
 <h1>Tutorial 6 - SideEffects</h1>
 
 The current say() method has a Concern that modifies its value. What if we instead want
-the value to be intact, but log that value prefixed with "Simon says:" to System.out? That would be considered a side-effect
+the value to be intact, but log that value to System.out? That would be considered a side-effect
 of the say() method, and should hence not be done in a Concern. It would be better to implement
 this in a SideEffect. SideEffects are executed after the Mixin and all Concerns for a method are done,
 which means that the final result has been computed. A SideEffect can access this result value, and
