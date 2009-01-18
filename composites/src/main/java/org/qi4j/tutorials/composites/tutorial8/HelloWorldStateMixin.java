@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2008, Your Corporation. All Rights Reserved.
- */
-
 package org.qi4j.tutorials.composites.tutorial8;
 
 import org.qi4j.api.injection.scope.PropertyField;
