@@ -28,12 +28,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-import org.qi4j.api.mixin.Initializable;
 import org.qi4j.api.common.ConstructionException;
+import org.qi4j.api.injection.scope.State;
+import org.qi4j.api.mixin.Initializable;
+import org.qi4j.api.property.Property;
 import org.qi4j.api.unitofwork.UnitOfWork;
 import org.qi4j.api.unitofwork.UnitOfWorkCompletionException;
-import org.qi4j.api.injection.scope.PropertyField;
-import org.qi4j.api.property.Property;
 import org.qi4j.tutorials.recipe.domain.Category;
 import org.qi4j.tutorials.recipe.domain.CategoryEntity;
 
@@ -43,7 +43,7 @@ import org.qi4j.tutorials.recipe.domain.CategoryEntity;
 public class CategoryViewMixin
     implements FramePlugin, Initializable
 {
-    private @PropertyField Property<String> name;
+    private @State Property<String> name;
 
     public void initialize() throws ConstructionException
     {

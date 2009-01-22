@@ -1,6 +1,6 @@
 package org.qi4j.tutorials.composites.tutorial8;
 
-import org.qi4j.api.injection.scope.PropertyField;
+import org.qi4j.api.injection.scope.State;
 import org.qi4j.api.property.Property;
 
 /**
@@ -10,8 +10,8 @@ import org.qi4j.api.property.Property;
 public class HelloWorldStateMixin
     implements HelloWorldState
 {
-    @PropertyField Property<String> phrase;
-    @PropertyField Property<String> name;
+    @State Property<String> phrase;
+    @State Property<String> name;
 
     public Property<String> phrase()
     {
