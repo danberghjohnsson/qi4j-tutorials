@@ -10,8 +10,8 @@ import org.qi4j.api.property.Property;
 public class HelloWorldStateMixin
     implements HelloWorldState
 {
-    @State Property<String> phrase;
-    @State Property<String> name;
+    @State private Property<String> phrase;
+    @State private Property<String> name;
 
     public Property<String> phrase()
     {

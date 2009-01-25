@@ -43,7 +43,7 @@ import org.qi4j.tutorials.recipe.domain.CategoryEntity;
 public class CategoryViewMixin
     implements FramePlugin, Initializable
 {
-    private @State Property<String> name;
+    @State private Property<String> name;
 
     public void initialize() throws ConstructionException
     {
