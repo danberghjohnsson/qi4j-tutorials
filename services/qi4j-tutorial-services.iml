@@ -69,7 +69,7 @@
     <orderEntry type="library" exported="" name="Maven: org.slf4j:slf4j-simple:1.4.2" level="project" />
     <orderEntry type="module" module-name="qi4j-script-jruby" exported="" />
     <orderEntry type="module" module-name="qi4j-script-common" exported="" />
-    <orderEntry type="library" exported="" name="Maven: org.jruby:jruby:1.1" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.jruby:jruby:1.1.6" level="project" />
   </component>
 </module>
 
