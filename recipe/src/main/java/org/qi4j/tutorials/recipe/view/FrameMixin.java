@@ -20,15 +20,15 @@ import java.awt.GridLayout;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import org.qi4j.api.unitofwork.UnitOfWork;
-import org.qi4j.api.unitofwork.UnitOfWorkFactory;
 import org.qi4j.api.injection.scope.Service;
 import org.qi4j.api.injection.scope.Structure;
-import org.qi4j.tutorials.recipe.domain.CategoryEntity;
 import org.qi4j.api.service.Activatable;
+import org.qi4j.api.unitofwork.UnitOfWork;
+import org.qi4j.api.unitofwork.UnitOfWorkFactory;
+import org.qi4j.tutorials.recipe.domain.CategoryEntity;
 
 /**
- * TODO
+ * JAVADOC
  */
 public class FrameMixin
     implements Frame, Activatable

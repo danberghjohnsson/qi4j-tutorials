@@ -19,7 +19,7 @@ import org.qi4j.api.service.Activatable;
 import org.qi4j.api.service.ServiceComposite;
 
 /**
- * TODO
+ * JAVADOC
  */
 @Mixins( FrameMixin.class )
 public interface FrameService

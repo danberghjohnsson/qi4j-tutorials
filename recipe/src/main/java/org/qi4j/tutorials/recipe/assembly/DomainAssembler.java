@@ -14,16 +14,16 @@
 
 package org.qi4j.tutorials.recipe.assembly;
 
+import static org.qi4j.api.common.Visibility.application;
 import org.qi4j.bootstrap.Assembler;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.tutorials.recipe.domain.Category;
 import org.qi4j.tutorials.recipe.domain.CategoryEntity;
 import org.qi4j.tutorials.recipe.domain.RecipeEntity;
-import static org.qi4j.api.common.Visibility.*;
 
 /**
- * TODO
+ * JAVADOC
  */
 public class DomainAssembler
     implements Assembler

@@ -22,7 +22,7 @@ import org.qi4j.tutorials.recipe.view.FrameService;
 import org.qi4j.tutorials.recipe.view.Main;
 
 /**
- * TODO
+ * JAVADOC
  */
 public class ViewAssembler
     implements Assembler

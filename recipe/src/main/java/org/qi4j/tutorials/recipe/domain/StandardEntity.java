@@ -15,7 +15,7 @@
 package org.qi4j.tutorials.recipe.domain;
 
 /**
- * TODO
+ * JAVADOC
  */
 public interface StandardEntity
 {

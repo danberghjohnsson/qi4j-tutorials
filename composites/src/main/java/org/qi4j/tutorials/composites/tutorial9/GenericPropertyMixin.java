@@ -23,7 +23,7 @@ import org.qi4j.api.property.Property;
 import org.qi4j.api.property.StateHolder;
 
 /**
- * TODO
+ * JAVADOC
  */
 @AppliesTo( { GenericPropertyMixin.PropertyFilter.class } )
 public class GenericPropertyMixin

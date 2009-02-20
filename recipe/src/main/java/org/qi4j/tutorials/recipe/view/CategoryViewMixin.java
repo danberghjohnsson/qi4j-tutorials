@@ -38,7 +38,7 @@ import org.qi4j.tutorials.recipe.domain.Category;
 import org.qi4j.tutorials.recipe.domain.CategoryEntity;
 
 /**
- * TODO
+ * JAVADOC
  */
 public class CategoryViewMixin
     implements FramePlugin, Initializable

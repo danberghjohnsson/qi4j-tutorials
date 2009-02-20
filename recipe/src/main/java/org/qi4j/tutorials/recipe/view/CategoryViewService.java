@@ -18,7 +18,7 @@ import org.qi4j.api.mixin.Mixins;
 import org.qi4j.api.service.ServiceComposite;
 
 /**
- * TODO
+ * JAVADOC
  */
 @Mixins( CategoryViewMixin.class )
 public interface CategoryViewService extends ServiceComposite, FramePlugin

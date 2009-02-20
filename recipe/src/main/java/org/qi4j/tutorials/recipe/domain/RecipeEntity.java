@@ -17,7 +17,7 @@ package org.qi4j.tutorials.recipe.domain;
 import org.qi4j.api.entity.EntityComposite;
 
 /**
- * TODO
+ * JAVADOC
  */
 public interface RecipeEntity
     extends StandardEntity, EntityComposite, Recipe

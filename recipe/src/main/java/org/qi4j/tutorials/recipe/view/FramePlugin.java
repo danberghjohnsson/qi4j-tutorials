@@ -15,12 +15,12 @@
 package org.qi4j.tutorials.recipe.view;
 
 import java.awt.Component;
-import org.qi4j.api.unitofwork.UnitOfWork;
-import org.qi4j.api.property.Property;
 import org.qi4j.api.common.Optional;
+import org.qi4j.api.property.Property;
+import org.qi4j.api.unitofwork.UnitOfWork;
 
 /**
- * TODO
+ * JAVADOC
  */
 public interface FramePlugin
 {

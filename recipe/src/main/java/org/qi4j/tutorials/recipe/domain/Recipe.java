@@ -19,7 +19,7 @@ import org.qi4j.api.entity.association.Association;
 import org.qi4j.api.property.Property;
 
 /**
- * TODO
+ * JAVADOC
  */
 public interface Recipe
 {

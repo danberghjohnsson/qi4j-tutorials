@@ -15,7 +15,7 @@
 package org.qi4j.tutorials.cargo.step2;
 
 /**
- * TODO
+ * JAVADOC
  */
 public class ShippingServiceMixin
     implements ShippingService

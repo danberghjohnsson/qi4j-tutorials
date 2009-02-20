@@ -18,21 +18,21 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.PrintWriter;
 import org.openrdf.model.Statement;
+import org.qi4j.api.injection.scope.Service;
+import org.qi4j.api.object.ObjectBuilderFactory;
+import org.qi4j.api.structure.Application;
 import org.qi4j.bootstrap.Assembler;
 import org.qi4j.bootstrap.Energy4Java;
 import org.qi4j.bootstrap.LayerName;
 import org.qi4j.bootstrap.ModuleName;
-import org.qi4j.api.injection.scope.Service;
 import org.qi4j.library.rdf.model.ApplicationSerializer;
 import org.qi4j.library.rdf.serializer.RdfXmlSerializer;
-import org.qi4j.api.object.ObjectBuilderFactory;
-import org.qi4j.api.structure.Application;
 import org.qi4j.tutorials.recipe.assembly.DomainAssembler;
 import org.qi4j.tutorials.recipe.assembly.InfrastructureAssembler;
 import org.qi4j.tutorials.recipe.assembly.ViewAssembler;
 
 /**
- * TODO
+ * JAVADOC
  */
 public class Main
 {

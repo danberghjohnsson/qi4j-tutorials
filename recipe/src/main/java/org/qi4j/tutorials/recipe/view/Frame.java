@@ -17,7 +17,7 @@ package org.qi4j.tutorials.recipe.view;
 import javax.swing.JFrame;
 
 /**
- * TODO
+ * JAVADOC
  */
 public interface Frame
 {
