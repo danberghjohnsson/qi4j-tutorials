@@ -25,6 +25,7 @@ import org.qi4j.bootstrap.Assembler;
 import org.qi4j.bootstrap.Energy4Java;
 import org.qi4j.bootstrap.LayerName;
 import org.qi4j.bootstrap.ModuleName;
+import org.qi4j.bootstrap.ApplicationAssemblerAdapter;
 import org.qi4j.library.rdf.model.ApplicationSerializer;
 import org.qi4j.library.rdf.serializer.RdfXmlSerializer;
 import org.qi4j.tutorials.recipe.assembly.DomainAssembler;
@@ -48,7 +49,7 @@ public class Main
         throws Exception
     {
         Energy4Java boot = new Energy4Java();
-        final Application application = boot.newApplication( new Assembler[][][]
+        final Application application = boot.newApplication( new ApplicationAssemblerAdapter(new Assembler[][][]
             {
                 {
                     {
@@ -58,7 +59,7 @@ public class Main
                         new InfrastructureAssembler()
                     }
                 }
-            } );
+            }){} );
 
         application.activate();
 

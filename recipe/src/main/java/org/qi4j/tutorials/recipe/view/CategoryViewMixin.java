@@ -133,7 +133,7 @@ public class CategoryViewMixin
 
     private void addProperty( JPanel editPanel, Property property, PropertyBinder binder )
     {
-        String name = property.name();
+        String name = property.qualifiedName().name();
         name = name.substring( 0, 1 ).toUpperCase() + name.substring( 1 );
 
         JPanel linePanel = new JPanel( new BorderLayout() );
