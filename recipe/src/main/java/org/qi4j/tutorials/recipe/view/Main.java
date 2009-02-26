@@ -31,6 +31,7 @@ import org.qi4j.library.rdf.serializer.RdfXmlSerializer;
 import org.qi4j.tutorials.recipe.assembly.DomainAssembler;
 import org.qi4j.tutorials.recipe.assembly.InfrastructureAssembler;
 import org.qi4j.tutorials.recipe.assembly.ViewAssembler;
+import org.qi4j.spi.structure.ApplicationSPI;
 
 /**
  * JAVADOC
@@ -49,7 +50,7 @@ public class Main
         throws Exception
     {
         Energy4Java boot = new Energy4Java();
-        final Application application = boot.newApplication( new ApplicationAssemblerAdapter(new Assembler[][][]
+        final ApplicationSPI application = boot.newApplication( new ApplicationAssemblerAdapter(new Assembler[][][]
             {
                 {
                     {
