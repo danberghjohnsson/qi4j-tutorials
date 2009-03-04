@@ -28,7 +28,7 @@ public class ServiceConsumer
 
     public void run()
     {
-        SomeSimple someSimpleService = finder.findService( SomeSimple.class ).get();
+        SomeSimple someSimpleService = finder.<SomeSimple>findService( SomeSimple.class ).get();
         someSimpleService.doService( "Hello", "World" );
     }
 }
