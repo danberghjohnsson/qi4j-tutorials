@@ -24,7 +24,7 @@ import org.qi4j.tutorials.recipe.domain.RecipeEntity;
 
 /**
  * JAVADOC
- */
+ */// $<snippet id="main">$
 public class DomainAssembler
     implements Assembler
 {
@@ -34,3 +34,4 @@ public class DomainAssembler
         module.on( Category.class ).to().name().set( "New category" );
     }
 }
+// $</snippet>$
