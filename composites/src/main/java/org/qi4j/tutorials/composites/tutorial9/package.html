@@ -27,7 +27,7 @@ Mixin becomes an implementation detail. This can be used either for encapsulatio
 utility mixins that help the rest of the code implement some interface, but which itself should not be exposed.
 <p/>
 Since the state is now hidden the initialization of the Composite is a bit more tricky. Instead of just
-instantiating it you have to create a CompositeBuilder first, then set the state using .stateFor(), and then
+instantiating it you have to create a CompositeBuilder first, then set the state using .prototypeFor(), and then
 call newInstance(). This ensures that the state can be set during construction, but not at any later point, other
 than through publicly exposed methods.
 <p/>

@@ -34,8 +34,8 @@ public class Step2TestCase
     {
         super.setUp();
         CompositeBuilder<VoyageComposite> voyageBuilder = compositeBuilderFactory.newCompositeBuilder( VoyageComposite.class );
-        voyageBuilder.stateFor( Voyage.class ).bookedCargoSize().set( 0.0 );
-        voyageBuilder.stateFor( Voyage.class ).capacity().set( 100.0 );
+        voyageBuilder.prototypeFor( Voyage.class ).bookedCargoSize().set( 0.0 );
+        voyageBuilder.prototypeFor( Voyage.class ).capacity().set( 100.0 );
         voyage = voyageBuilder.newInstance();
 
         CompositeBuilder<ShippingServiceComposite> shippingBuilder = compositeBuilderFactory.newCompositeBuilder( ShippingServiceComposite.class );
@@ -90,7 +90,7 @@ public class Step2TestCase
     private Cargo newCargo( double size )
     {
         CompositeBuilder<CargoComposite> builder = compositeBuilderFactory.newCompositeBuilder( CargoComposite.class );
-        builder.stateFor( Cargo.class ).size().set( size );
+        builder.prototypeFor( Cargo.class ).size().set( size );
         return builder.newInstance();
     }
 }

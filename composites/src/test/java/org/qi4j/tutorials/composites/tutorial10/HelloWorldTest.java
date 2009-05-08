@@ -31,8 +31,8 @@ public class HelloWorldTest
     {
         {
             CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
-            builder.stateFor( HelloWorldState.class ).phrase().set( "Hello" );
-            builder.stateFor( HelloWorldState.class ).name().set( "World" );
+            builder.prototypeFor( HelloWorldState.class ).phrase().set( "Hello" );
+            builder.prototypeFor( HelloWorldState.class ).name().set( "World" );
             HelloWorldComposite helloWorld = builder.newInstance();
             String result = helloWorld.say();
             assertThat( result, equalTo( "Hello World" ) );
@@ -40,8 +40,8 @@ public class HelloWorldTest
 
         {
             CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
-            builder.stateFor( HelloWorldState.class ).phrase().set( "Hey" );
-            builder.stateFor( HelloWorldState.class ).name().set( "Universe" );
+            builder.prototypeFor( HelloWorldState.class ).phrase().set( "Hey" );
+            builder.prototypeFor( HelloWorldState.class ).name().set( "Universe" );
             HelloWorldComposite helloWorld = builder.newInstance();
             String result = helloWorld.say();
             assertThat( result, equalTo( "Hey Universe" ) );
@@ -54,7 +54,7 @@ public class HelloWorldTest
         try
         {
             CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
-            builder.stateFor( HelloWorldState.class ).phrase().set( null );
+            builder.prototypeFor( HelloWorldState.class ).phrase().set( null );
             HelloWorldComposite helloWorld = builder.newInstance();
 
             fail( "Should not be allowed to set phrase to null" );
@@ -67,7 +67,7 @@ public class HelloWorldTest
         try
         {
             CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
-            builder.stateFor( HelloWorldState.class ).phrase().set( "" );
+            builder.prototypeFor( HelloWorldState.class ).phrase().set( "" );
             HelloWorldComposite helloWorld = builder.newInstance();
 
             fail( "Should not be allowed to set phrase to empty string" );
@@ -84,7 +84,7 @@ public class HelloWorldTest
         try
         {
             CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
-            builder.stateFor( HelloWorldState.class ).name().set( null );
+            builder.prototypeFor( HelloWorldState.class ).name().set( null );
             HelloWorldComposite helloWorld = builder.newInstance();
 
             fail( "Should not be allowed to set phrase to null" );
@@ -97,7 +97,7 @@ public class HelloWorldTest
         try
         {
             CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
-            builder.stateFor( HelloWorldState.class ).name().set( "" );
+            builder.prototypeFor( HelloWorldState.class ).name().set( "" );
             HelloWorldComposite helloWorld = builder.newInstance();
 
             fail( "Should not be allowed to set phrase to empty string" );

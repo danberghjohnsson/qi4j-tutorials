@@ -27,8 +27,8 @@ public class HelloWorldTest
         };
         CompositeBuilderFactory builderFactory = assembly.compositeBuilderFactory();
         CompositeBuilder<HelloWorldComposite> builder = builderFactory.newCompositeBuilder( HelloWorldComposite.class );
-        builder.stateOfComposite().name().set( "Hello" );
-        builder.stateOfComposite().phrase().set( "World" );
+        builder.prototype().name().set( "Hello" );
+        builder.prototype().phrase().set( "World" );
         helloWorld = builder.newInstance();
     }
 
