@@ -102,4 +102,11 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>ops4j-snapshot</id>
+            <url>http://repository.ops4j.org/mvn-snapshots</url>
+        </repository>
+    </repositories>
 </project>
