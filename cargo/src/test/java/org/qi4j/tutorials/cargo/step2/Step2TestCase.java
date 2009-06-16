@@ -21,8 +21,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
-import org.qi4j.api.composite.CompositeBuilder;
 import org.qi4j.test.AbstractQi4jTest;
+import org.qi4j.api.composite.TransientBuilder;
 
 public class Step2TestCase
     extends AbstractQi4jTest
@@ -33,12 +33,13 @@ public class Step2TestCase
     @Override public void setUp() throws Exception
     {
         super.setUp();
-        CompositeBuilder<VoyageComposite> voyageBuilder = compositeBuilderFactory.newCompositeBuilder( VoyageComposite.class );
+        TransientBuilder<VoyageComposite> voyageBuilder = transientBuilderFactory.newTransientBuilder( VoyageComposite.class );
         voyageBuilder.prototypeFor( Voyage.class ).bookedCargoSize().set( 0.0 );
         voyageBuilder.prototypeFor( Voyage.class ).capacity().set( 100.0 );
         voyage = voyageBuilder.newInstance();
 
-        CompositeBuilder<ShippingServiceComposite> shippingBuilder = compositeBuilderFactory.newCompositeBuilder( ShippingServiceComposite.class );
+        TransientBuilder<ShippingServiceComposite> shippingBuilder =
+            transientBuilderFactory.newTransientBuilder( ShippingServiceComposite.class );
         shippingService = shippingBuilder.newInstance();
     }
 
@@ -84,12 +85,12 @@ public class Step2TestCase
     public void assemble( ModuleAssembly module )
         throws AssemblyException
     {
-        module.addComposites( VoyageComposite.class, CargoComposite.class, ShippingServiceComposite.class );
+        module.addTransients( VoyageComposite.class, CargoComposite.class, ShippingServiceComposite.class );
     }
 
     private Cargo newCargo( double size )
     {
-        CompositeBuilder<CargoComposite> builder = compositeBuilderFactory.newCompositeBuilder( CargoComposite.class );
+        TransientBuilder<CargoComposite> builder = transientBuilderFactory.newTransientBuilder( CargoComposite.class );
         builder.prototypeFor( Cargo.class ).size().set( size );
         return builder.newInstance();
     }

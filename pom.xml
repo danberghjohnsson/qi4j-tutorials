@@ -12,7 +12,7 @@
         <version.qi4j-lib>0.8-SNAPSHOT</version.qi4j-lib>
     </properties>
 
-    <modules>
+    <modules>                               
         <module>introduction</module>
         <module>composites</module>
         <module>services</module>

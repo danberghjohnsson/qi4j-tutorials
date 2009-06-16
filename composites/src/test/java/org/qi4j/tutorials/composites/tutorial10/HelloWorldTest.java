@@ -5,10 +5,10 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
-import org.qi4j.api.composite.CompositeBuilder;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.SingletonAssembler;
+import org.qi4j.api.composite.TransientBuilder;
 
 public class HelloWorldTest
 {
@@ -21,7 +21,7 @@ public class HelloWorldTest
         {
             public void assemble( ModuleAssembly module ) throws AssemblyException
             {
-                module.addComposites( HelloWorldComposite.class );
+                module.addTransients( HelloWorldComposite.class );
             }
         };
     }
@@ -30,7 +30,8 @@ public class HelloWorldTest
     public void givenAssemblyWhenBuildInstanceAndSayThenReturnCorrectResult()
     {
         {
-            CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
+            TransientBuilder<HelloWorldComposite> builder =
+                assembly.transientBuilderFactory().newTransientBuilder( HelloWorldComposite.class );
             builder.prototypeFor( HelloWorldState.class ).phrase().set( "Hello" );
             builder.prototypeFor( HelloWorldState.class ).name().set( "World" );
             HelloWorldComposite helloWorld = builder.newInstance();
@@ -39,7 +40,8 @@ public class HelloWorldTest
         }
 
         {
-            CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
+            TransientBuilder<HelloWorldComposite> builder =
+                assembly.transientBuilderFactory().newTransientBuilder( HelloWorldComposite.class );
             builder.prototypeFor( HelloWorldState.class ).phrase().set( "Hey" );
             builder.prototypeFor( HelloWorldState.class ).name().set( "Universe" );
             HelloWorldComposite helloWorld = builder.newInstance();
@@ -53,7 +55,8 @@ public class HelloWorldTest
     {
         try
         {
-            CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
+            TransientBuilder<HelloWorldComposite> builder =
+                assembly.transientBuilderFactory().newTransientBuilder( HelloWorldComposite.class );
             builder.prototypeFor( HelloWorldState.class ).phrase().set( null );
             HelloWorldComposite helloWorld = builder.newInstance();
 
@@ -66,7 +69,8 @@ public class HelloWorldTest
 
         try
         {
-            CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
+            TransientBuilder<HelloWorldComposite> builder =
+                assembly.transientBuilderFactory().newTransientBuilder( HelloWorldComposite.class );
             builder.prototypeFor( HelloWorldState.class ).phrase().set( "" );
             HelloWorldComposite helloWorld = builder.newInstance();
 
@@ -83,7 +87,8 @@ public class HelloWorldTest
     {
         try
         {
-            CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
+            TransientBuilder<HelloWorldComposite> builder =
+                assembly.transientBuilderFactory().newTransientBuilder( HelloWorldComposite.class );
             builder.prototypeFor( HelloWorldState.class ).name().set( null );
             HelloWorldComposite helloWorld = builder.newInstance();
 
@@ -96,7 +101,8 @@ public class HelloWorldTest
 
         try
         {
-            CompositeBuilder<HelloWorldComposite> builder = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class );
+            TransientBuilder<HelloWorldComposite> builder =
+                assembly.transientBuilderFactory().newTransientBuilder( HelloWorldComposite.class );
             builder.prototypeFor( HelloWorldState.class ).name().set( "" );
             HelloWorldComposite helloWorld = builder.newInstance();
 

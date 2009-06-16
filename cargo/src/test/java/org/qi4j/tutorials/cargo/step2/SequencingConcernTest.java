@@ -56,7 +56,7 @@ public class SequencingConcernTest
         {
             public void assemble( ModuleAssembly module ) throws AssemblyException
             {
-                module.addComposites( ShippingServiceTestComposite.class );
+                module.addTransients( ShippingServiceTestComposite.class );
             }
         };
         ShippingService shippingService = createMock( ShippingService.class );
@@ -68,7 +68,8 @@ public class SequencingConcernTest
         expect( cargo.size() ).andReturn( new PropertyInstance<Double>( new GenericPropertyInfo( Cargo.class, "size" ), 0.0, null ) ).atLeastOnce();
         expect( sequence.sequence() ).andReturn( new PropertyInstance<Integer>( new GenericPropertyInfo( HasSequence.class, "sequence" ), 0, null ) ).atLeastOnce();
         replay( shippingService, cargo, voyage );
-        ShippingServiceTestComposite underTest = assembler.compositeBuilderFactory().newComposite( ShippingServiceTestComposite.class );
+        ShippingServiceTestComposite underTest =
+            assembler.transientBuilderFactory().newTransient( ShippingServiceTestComposite.class );
         underTest.useMock( shippingService ).forClass( ShippingService.class );
         assertThat( "Booking result", underTest.makeBooking( cargo, voyage ), is( equalTo( -1000 ) ) );
         verify( shippingService, cargo, voyage );
@@ -86,7 +87,7 @@ public class SequencingConcernTest
         {
             public void assemble( ModuleAssembly module ) throws AssemblyException
             {
-                module.addComposites( ShippingServiceTestComposite.class );
+                module.addTransients( ShippingServiceTestComposite.class );
             }
         };
         ShippingService shippingService = createMock( ShippingService.class );
@@ -98,7 +99,8 @@ public class SequencingConcernTest
         expect( generator.sequence() ).andReturn( sequence ).anyTimes();
         expect( sequence.get() ).andReturn( 1000 );
         replay( shippingService, cargo, voyage, generator, sequence );
-        ShippingServiceTestComposite underTest = assembler.compositeBuilderFactory().newComposite( ShippingServiceTestComposite.class );
+        ShippingServiceTestComposite underTest =
+            assembler.transientBuilderFactory().newTransient( ShippingServiceTestComposite.class );
         underTest.useMock( shippingService ).forClass( ShippingService.class );
         underTest.useMock( generator ).forClass( HasSequence.class );
         assertThat( "Booking result", underTest.makeBooking( cargo, voyage ), is( equalTo( 1000 ) ) );
@@ -107,8 +109,7 @@ public class SequencingConcernTest
 
     @Mixins( MockPlayerMixin.class )
     @Concerns( SequencingConcern.class )
-    public static interface ShippingServiceTestComposite
-        extends ShippingService, HasSequence, MockComposite
+    public static interface ShippingServiceTestComposite extends ShippingService, HasSequence, MockComposite
     {
     }
 

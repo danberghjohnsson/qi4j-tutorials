@@ -20,10 +20,10 @@ public class HelloWorldTest
         {
             public void assemble( ModuleAssembly module ) throws AssemblyException
             {
-                module.addComposites( HelloWorldComposite.class );
+                module.addTransients( HelloWorldComposite.class );
             }
         };
-        helloWorld = assembly.compositeBuilderFactory().newCompositeBuilder( HelloWorldComposite.class ).newInstance();
+        helloWorld = assembly.transientBuilderFactory().newTransientBuilder( HelloWorldComposite.class ).newInstance();
     }
 
     @Test

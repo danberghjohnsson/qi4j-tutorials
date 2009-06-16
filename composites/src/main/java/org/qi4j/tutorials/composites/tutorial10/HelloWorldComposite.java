@@ -1,6 +1,6 @@
 package org.qi4j.tutorials.composites.tutorial10;
 
-import org.qi4j.api.composite.Composite;
+import org.qi4j.api.composite.TransientComposite;
 import org.qi4j.api.mixin.Mixins;
 
 /**
@@ -12,8 +12,7 @@ import org.qi4j.api.mixin.Mixins;
  * would have to implement all methods, including those in Composite.
  */
 @Mixins( { HelloWorldMixin.class } )
-public interface HelloWorldComposite
-    extends Composite
+public interface HelloWorldComposite extends TransientComposite
 {
     String say();
 }

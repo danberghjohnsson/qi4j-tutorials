@@ -5,11 +5,11 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
-import org.qi4j.api.composite.CompositeBuilder;
-import org.qi4j.api.composite.CompositeBuilderFactory;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.SingletonAssembler;
+import org.qi4j.api.composite.TransientBuilderFactory;
+import org.qi4j.api.composite.TransientBuilder;
 
 public class HelloWorldTest
 {
@@ -22,11 +22,11 @@ public class HelloWorldTest
         {
             public void assemble( ModuleAssembly module ) throws AssemblyException
             {
-                module.addComposites( HelloWorldComposite.class );
+                module.addTransients( HelloWorldComposite.class );
             }
         };
-        CompositeBuilderFactory builderFactory = assembly.compositeBuilderFactory();
-        CompositeBuilder<HelloWorldComposite> builder = builderFactory.newCompositeBuilder( HelloWorldComposite.class );
+        TransientBuilderFactory builderFactory = assembly.transientBuilderFactory();
+        TransientBuilder<HelloWorldComposite> builder = builderFactory.newTransientBuilder( HelloWorldComposite.class );
         builder.prototype().name().set( "Hello" );
         builder.prototype().phrase().set( "World" );
         helloWorld = builder.newInstance();

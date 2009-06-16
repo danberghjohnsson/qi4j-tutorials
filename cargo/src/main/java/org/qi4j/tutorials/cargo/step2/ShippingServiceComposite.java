@@ -17,10 +17,10 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import org.qi4j.api.composite.Composite;
+import org.qi4j.api.composite.TransientComposite;
 import org.qi4j.api.concern.Concerns;
 
 @Concerns( { SequencingConcern.class, OverbookingConcern.class } )
-public interface ShippingServiceComposite extends ShippingService, Composite
+public interface ShippingServiceComposite extends ShippingService, TransientComposite
 {
 }

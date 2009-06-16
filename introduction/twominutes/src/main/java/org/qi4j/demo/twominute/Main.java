@@ -3,7 +3,7 @@ package org.qi4j.demo.twominute;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.SingletonAssembler;
-import org.qi4j.api.composite.CompositeBuilderFactory;
+import org.qi4j.api.composite.TransientBuilderFactory;
 
 public class Main
 {
@@ -14,13 +14,13 @@ public class Main
             public void assemble( ModuleAssembly assembly )
                 throws AssemblyException
             {
-                assembly.addComposites( PoliticianComposite.class );
+                assembly.addTransients( PoliticianComposite.class );
             }
         };
-        CompositeBuilderFactory factory =
-            assembler.compositeBuilderFactory();
+        TransientBuilderFactory factory =
+            assembler.transientBuilderFactory();
         Speaker speaker =
-            factory.newComposite( PoliticianComposite.class );
+            factory.newTransient( PoliticianComposite.class );
         System.out.println( speaker.sayHello() );
     }
 }

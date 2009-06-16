@@ -1,6 +1,6 @@
 package org.qi4j.tutorials.composites.tutorial6;
 
-import org.qi4j.api.composite.Composite;
+import org.qi4j.api.composite.TransientComposite;
 
 /**
  * This Composite interface declares transitively
@@ -12,6 +12,6 @@ import org.qi4j.api.composite.Composite;
  * and by looking at the declared @Mixins annotations.
  */
 public interface HelloWorldComposite
-    extends HelloWorld, Composite
+    extends HelloWorld, TransientComposite
 {
 }

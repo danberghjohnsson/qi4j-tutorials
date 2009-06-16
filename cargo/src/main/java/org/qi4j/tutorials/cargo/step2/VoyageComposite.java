@@ -17,8 +17,8 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import org.qi4j.api.composite.Composite;
+import org.qi4j.api.composite.TransientComposite;
 
-public interface VoyageComposite extends Voyage, Composite
+public interface VoyageComposite extends Voyage, TransientComposite
 {
 }

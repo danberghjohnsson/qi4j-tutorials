@@ -1,6 +1,6 @@
 package org.qi4j.tutorials.composites.tutorial4;
 
-import org.qi4j.api.composite.Composite;
+import org.qi4j.api.composite.TransientComposite;
 
 /**
  * This Composite interface declares all the Fragments
@@ -12,6 +12,6 @@ import org.qi4j.api.composite.Composite;
  * with overrides of those defaults however.
  */
 public interface HelloWorldComposite
-    extends HelloWorld, Composite
+    extends HelloWorld, TransientComposite
 {
 }

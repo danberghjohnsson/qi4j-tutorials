@@ -2,9 +2,10 @@ package org.qi4j.demo.twominute;
 
 import org.qi4j.api.mixin.Mixins;
 import org.qi4j.api.composite.Composite;
+import org.qi4j.api.composite.TransientComposite;
 
 @Mixins( SpeakerMixin.class )
 public interface PoliticianComposite 
-    extends Composite, Speaker  // +others
+    extends TransientComposite, Speaker  // +others
 {
 }
