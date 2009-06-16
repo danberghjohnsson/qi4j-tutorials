@@ -19,7 +19,7 @@ other checks that are useful to make, such as ensuring that the passed in string
 The only thing you have to do is add the annotation @NotEmpty to the method parameters you want to
 constrain in this way. The annotation has a default implementation declared in it by using the @Constraints
 annotation. You can either just use this, which is the common case, or override it by declaring your
-own @Constraints annotation in the Composite type.
+own @Constraints annotation in the TransientComposite type.
 <p/>
 You can add as many Constraint annotations you want to a parameter. All of them will be checked whenever a method is called.
 <p/>
