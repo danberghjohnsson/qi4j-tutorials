@@ -6,6 +6,6 @@ import org.qi4j.api.composite.TransientComposite;
 
 @Mixins( SpeakerMixin.class )
 public interface PoliticianComposite 
-    extends TransientComposite, Speaker  // +others
+    extends TransientComposite, Speaker // +others
 {
 }
