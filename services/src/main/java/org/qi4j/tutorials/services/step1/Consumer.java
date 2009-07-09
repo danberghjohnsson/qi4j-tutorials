@@ -30,5 +30,6 @@ public class Consumer
     {
         Book book = library.borrowBook( "Eric Evans", "Domain-Driven Design" );
         System.out.println( "Consumer got book: " + book.getTitle() );
+        library.returnBook( book );
     }
 }

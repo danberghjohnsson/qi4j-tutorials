@@ -15,28 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.qi4j.tutorials.services.step2;
+package org.qi4j.tutorials.services.step4;
 
-public class BookImpl
-    implements Book
+import org.qi4j.api.configuration.ConfigurationComposite;
+import org.qi4j.api.property.Property;
+
+public interface LibraryConfiguration extends ConfigurationComposite
 {
-    private String title;
-    private String author;
+    Property<String> titles();
 
-    public BookImpl( String title, String author )
-    {
-        this.title = title;
-        this.author = author;
-    }
+    Property<String> authors();
 
-    public String getTitle()
-    {
-        return title;
-    }
-
-    public String getAuthor()
-    {
-        return author;
-    }
-
+    Property<Integer> copies();
 }

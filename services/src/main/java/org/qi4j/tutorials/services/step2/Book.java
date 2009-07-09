@@ -17,9 +17,12 @@
  */
 package org.qi4j.tutorials.services.step2;
 
-public interface Book
-{
-    String getTitle();
+import org.qi4j.api.value.ValueComposite;
+import org.qi4j.api.property.Property;
 
-    String getAuthor();
+public interface Book extends ValueComposite
+{
+    Property<String> title();
+
+    Property<String> author();
 }

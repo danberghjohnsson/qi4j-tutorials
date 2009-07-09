@@ -17,23 +17,40 @@
  */
 package org.qi4j.tutorials.services.step3;
 
-import org.qi4j.api.value.ValueBuilderFactory;
-import org.qi4j.api.value.ValueBuilder;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.qi4j.api.injection.scope.Structure;
+import org.qi4j.api.service.Activatable;
+import org.qi4j.api.value.ValueBuilder;
+import org.qi4j.api.value.ValueBuilderFactory;
 
 
 public class LibraryMixin
-    implements Library
+    implements Library, Activatable
 {
     @Structure ValueBuilderFactory factory;
+    private HashMap<String, ArrayList<Book>> books;
+
+    private LibraryMixin()
+    {
+        books = new HashMap<String, ArrayList<Book>>();
+    }
 
     public Book borrowBook( String author, String title )
     {
-        ValueBuilder<Book> builder = factory.newValueBuilder( Book.class );
-        Book prototype = builder.prototype();
-        prototype.author().set( author );
-        prototype.title().set( title );
-        Book book = builder.newInstance();
+        String key = constructKey( author, title );
+        ArrayList<Book> copies = books.get( key );
+        if( copies == null )
+        {
+            System.out.println( "Book not available." );
+            return null; // Indicate that book is not available.
+        }
+        Book book = copies.remove( 0 );
+        if( book == null )
+        {
+            System.out.println( "Book not available." );
+            return null; // Indicate that book is not available.
+        }
         System.out.println( "Book borrowed: " + book.title().get() + " by " + book.author().get() );
         return book;
     }
@@ -41,5 +58,46 @@ public class LibraryMixin
     public void returnBook( Book book )
     {
         System.out.println( "Book returned: " + book.title().get() + " by " + book.author().get() );
+        String key = constructKey( book.author().get(), book.title().get() );
+        ArrayList<Book> copies = books.get( key );
+        if( copies == null )
+        {
+            throw new IllegalStateException( "Book " + book + " was not borrowed here." );
+        }
+        copies.add( book );
+    }
+
+    public void activate() throws Exception
+    {
+        createBook( "Eric Evans", "Domain Driven Design", 2 );
+        createBook( "Andy Hunt", "Pragmatic Programmer", 3 );
+        createBook( "Kent Beck", "Extreme Programming Explained", 5 );
+    }
+
+    public void passivate() throws Exception
+    {
+    }
+
+    private void createBook( String author, String title, int copies )
+    {
+        ValueBuilder<Book> builder = factory.newValueBuilder( Book.class );
+        Book prototype = builder.prototype();
+        prototype.author().set( author );
+        prototype.title().set( title );
+
+        ArrayList<Book> bookCopies = new ArrayList<Book>();
+        String key = constructKey( author, title );
+        books.put( key, bookCopies );
+
+        for( int i = 0; i < copies; i++ )
+        {
+            Book book = builder.newInstance();
+            bookCopies.add( book );
+        }
+    }
+
+    private String constructKey( String author, String title )
+    {
+        return author + "::" + title;
     }
 }

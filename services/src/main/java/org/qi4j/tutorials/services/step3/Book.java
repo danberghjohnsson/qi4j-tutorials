@@ -20,6 +20,7 @@ package org.qi4j.tutorials.services.step3;
 import org.qi4j.api.value.ValueComposite;
 import org.qi4j.api.property.Property;
 
+
 public interface Book extends ValueComposite
 {
     Property<String> title();

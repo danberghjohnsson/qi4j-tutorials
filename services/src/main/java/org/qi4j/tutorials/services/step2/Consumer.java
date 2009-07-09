@@ -14,22 +14,20 @@
 
 package org.qi4j.tutorials.services.step2;
 
+import org.qi4j.api.injection.scope.Service;
+
+
 /**
  * Simple service consumer. The service is injected using the @Service annotation.
  */
 public class Consumer
 {
-    Library library;
-
-    public Consumer( Library library )
-    {
-        this.library = library;
-    }
+    @Service Library library;
 
     public void run()
     {
         Book book = library.borrowBook( "Eric Evans", "Domain-Driven Design" );
-        System.out.println( "Consumer got book: " + book.getTitle() + " by " + book.getAuthor() );
+        System.out.println( "Consumer got book: " + book.title().get() + " by " + book.author().get() );
         library.returnBook( book );
     }
 }

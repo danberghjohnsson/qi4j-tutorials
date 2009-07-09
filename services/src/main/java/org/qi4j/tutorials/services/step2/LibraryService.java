@@ -1,7 +1,7 @@
-package org.qi4j.tutorials.services.step3;
+package org.qi4j.tutorials.services.step2;
 
-import org.qi4j.api.mixin.Mixins;
 import org.qi4j.api.service.ServiceComposite;
+import org.qi4j.api.mixin.Mixins;
 
 
 @Mixins( LibraryMixin.class )

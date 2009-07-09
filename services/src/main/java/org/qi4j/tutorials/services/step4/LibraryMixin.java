@@ -19,7 +19,10 @@ package org.qi4j.tutorials.services.step4;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.StringTokenizer;
+import org.qi4j.api.configuration.Configuration;
 import org.qi4j.api.injection.scope.Structure;
+import org.qi4j.api.injection.scope.This;
 import org.qi4j.api.service.Activatable;
 import org.qi4j.api.value.ValueBuilder;
 import org.qi4j.api.value.ValueBuilderFactory;
@@ -28,12 +31,22 @@ import org.qi4j.api.value.ValueBuilderFactory;
 public class LibraryMixin
     implements Library, Activatable
 {
-    @Structure ValueBuilderFactory factory;
     private HashMap<String, ArrayList<Book>> books;
 
-    private LibraryMixin()
+    public LibraryMixin( @This Configuration<LibraryConfiguration> config, @Structure ValueBuilderFactory factory )
     {
         books = new HashMap<String, ArrayList<Book>>();
+        String titles = config.configuration().titles().get();
+        String authors = config.configuration().authors().get();
+        int copies = config.configuration().copies().get();
+        StringTokenizer titlesSt = new StringTokenizer( titles, ",", false );
+        StringTokenizer authorSt = new StringTokenizer( authors, ",", false );
+        while( titlesSt.hasMoreTokens() )
+        {
+            String title = titlesSt.nextToken();
+            String author = authorSt.nextToken();
+            createBook( factory, author, title, copies );
+        }
     }
 
     public Book borrowBook( String author, String title )
@@ -67,18 +80,16 @@ public class LibraryMixin
         copies.add( book );
     }
 
-    public void activate() throws Exception
+    public void activate()
+        throws Exception
     {
-        createBook( "Eric Evans", "Domain Driven Design", 2 );
-        createBook( "Andy Hunt", "Pragmatic Programmer", 3 );
-        createBook( "Kent Beck", "Extreme Programming Explained", 5 );
     }
 
     public void passivate() throws Exception
     {
     }
 
-    private void createBook( String author, String title, int copies )
+    private void createBook( ValueBuilderFactory factory, String author, String title, int copies )
     {
         ValueBuilder<Book> builder = factory.newValueBuilder( Book.class );
         Book prototype = builder.prototype();
@@ -92,6 +103,7 @@ public class LibraryMixin
         for( int i = 0; i < copies; i++ )
         {
             Book book = builder.newInstance();
+            System.out.println( "Book created: " + book );
             bookCopies.add( book );
         }
     }

@@ -18,14 +18,25 @@
 package org.qi4j.tutorials.services.step2;
 
 import org.junit.Test;
+import org.qi4j.test.AbstractQi4jTest;
+import org.qi4j.bootstrap.ModuleAssembly;
+import org.qi4j.bootstrap.AssemblyException;
 
-public class LibraryTest
+public class LibraryTest extends AbstractQi4jTest
 {
     @Test
     public void testLibrary()
         throws Exception
     {
-        Consumer consumer = new Consumer( new LibraryImpl() );
+        Consumer consumer = objectBuilderFactory.newObject( Consumer.class );
         consumer.run();
+    }
+
+    public void assemble( ModuleAssembly module )
+        throws AssemblyException
+    {
+        module.addServices( LibraryService.class );
+        module.addValues( Book.class );
+        module.addObjects( Consumer.class );
     }
 }

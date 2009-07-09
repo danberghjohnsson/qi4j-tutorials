@@ -17,18 +17,29 @@
  */
 package org.qi4j.tutorials.services.step2;
 
-public class LibraryImpl
+import org.qi4j.api.value.ValueBuilderFactory;
+import org.qi4j.api.value.ValueBuilder;
+import org.qi4j.api.injection.scope.Structure;
+
+
+public class LibraryMixin
     implements Library
 {
+    @Structure ValueBuilderFactory factory;
+
     public Book borrowBook( String author, String title )
     {
-        Book book = new BookImpl( title, author );
-        System.out.println( "Book borrowed: " + book.getTitle() + " by " + book.getAuthor() );
+        ValueBuilder<Book> builder = factory.newValueBuilder( Book.class );
+        Book prototype = builder.prototype();
+        prototype.author().set( author );
+        prototype.title().set( title );
+        Book book = builder.newInstance();
+        System.out.println( "Book borrowed: " + book.title().get() + " by " + book.author().get() );
         return book;
     }
 
     public void returnBook( Book book )
     {
-        System.out.println( "Book returned: " + book.getTitle() + " by " + book.getAuthor() );
+        System.out.println( "Book returned: " + book.title().get() + " by " + book.author().get() );
     }
 }

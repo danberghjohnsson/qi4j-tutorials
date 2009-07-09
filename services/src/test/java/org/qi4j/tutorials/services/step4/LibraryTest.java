@@ -20,6 +20,9 @@ package org.qi4j.tutorials.services.step4;
 import org.qi4j.test.AbstractQi4jTest;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.AssemblyException;
+import org.qi4j.entitystore.memory.MemoryEntityStoreService;
+import org.qi4j.spi.entity.helpers.UuidIdentityGeneratorService;
+import org.qi4j.spi.entity.helpers.EntityTypeRegistryService;
 import org.junit.Test;
 
 
@@ -39,5 +42,9 @@ public class LibraryTest extends AbstractQi4jTest
         module.addServices( LibraryService.class );
         module.addValues( Book.class );
         module.addObjects( Consumer.class );
+        module.addEntities( LibraryConfiguration.class );
+        module.addServices( MemoryEntityStoreService.class );
+        module.addServices( UuidIdentityGeneratorService.class );
+        module.addServices( EntityTypeRegistryService.class );
     }
 }
