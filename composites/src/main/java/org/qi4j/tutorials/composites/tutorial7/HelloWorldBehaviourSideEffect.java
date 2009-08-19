@@ -10,7 +10,7 @@ public class HelloWorldBehaviourSideEffect extends SideEffectOf<HelloWorldBehavi
 {
     public String say()
     {
-        System.out.println( next.say() );
+        System.out.println( result.say() );
         return null;
     }
 }
