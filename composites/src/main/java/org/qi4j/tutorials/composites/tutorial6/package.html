@@ -14,8 +14,8 @@ case the SideEffect is not really relying on what method is being invoked. Both 
 in different scenarios.
 <p/>
 The easiest way to implement a typed SideEffect is to subclass the SideEffectOf class. This gives
-you access to the result of the real method invocation by using the "next" field, which has the same
-type as the interface of the method you want the code to be a side-effect of. Note that calling "next"
+you access to the result of the real method invocation by using the "result" field, which has the same
+type as the interface of the method you want the code to be a side-effect of. Note that calling "result"
 does not actually do anything, it only returns the value (or throws the exception, if one was thrown
 from the original method) that has already been computed. Similarly, since the method is already done,
 you can return anything from the SideEffect method. The framework will simply throw it away, and also
