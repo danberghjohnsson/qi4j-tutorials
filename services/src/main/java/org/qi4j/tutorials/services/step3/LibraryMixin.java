@@ -31,7 +31,7 @@ public class LibraryMixin
     @Structure ValueBuilderFactory factory;
     private HashMap<String, ArrayList<Book>> books;
 
-    private LibraryMixin()
+    public LibraryMixin()
     {
         books = new HashMap<String, ArrayList<Book>>();
     }
