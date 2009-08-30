@@ -3,7 +3,7 @@
   <groupId>org.qi4j</groupId>
   <artifactId>qi4j-tutorial</artifactId>
   <name>Qi4j Tutorial (Build POM)</name>
-  <version>1.0-RC2-SNAPSHOT</version>
+  <version>1.0-RC1</version>
   <packaging>pom</packaging>
   <!-- This POM is ONLY to initiate the modules to be built. -->
   <properties>
