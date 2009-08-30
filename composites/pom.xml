@@ -47,7 +47,7 @@
         <dependency>
             <groupId>org.qi4j.library</groupId>
             <artifactId>qi4j-script-jruby</artifactId>
-            <version>0.8-SNAPSHOT</version>
+            <version>${version.qi4j-lib}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
