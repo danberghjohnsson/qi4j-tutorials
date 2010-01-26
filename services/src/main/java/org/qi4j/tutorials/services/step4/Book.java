@@ -17,10 +17,11 @@
  */
 package org.qi4j.tutorials.services.step4;
 
-import org.qi4j.api.value.ValueComposite;
 import org.qi4j.api.property.Property;
+import org.qi4j.api.value.ValueComposite;
 
-public interface Book extends ValueComposite
+public interface Book
+    extends ValueComposite
 {
     Property<String> title();
 

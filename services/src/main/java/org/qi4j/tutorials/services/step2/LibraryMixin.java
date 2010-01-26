@@ -17,15 +17,15 @@
  */
 package org.qi4j.tutorials.services.step2;
 
-import org.qi4j.api.value.ValueBuilderFactory;
-import org.qi4j.api.value.ValueBuilder;
 import org.qi4j.api.injection.scope.Structure;
-
+import org.qi4j.api.value.ValueBuilder;
+import org.qi4j.api.value.ValueBuilderFactory;
 
 public class LibraryMixin
     implements Library
 {
-    @Structure ValueBuilderFactory factory;
+    @Structure
+    ValueBuilderFactory factory;
 
     public Book borrowBook( String author, String title )
     {

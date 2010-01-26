@@ -18,18 +18,18 @@
 package org.qi4j.tutorials.cargo.step1;
 
 import junit.framework.TestCase;
-import org.qi4j.tutorials.cargo.step1.internal.ShippingServiceImpl;
 import org.qi4j.tutorials.cargo.step1.internal.CargoImpl;
+import org.qi4j.tutorials.cargo.step1.internal.ShippingServiceImpl;
 import org.qi4j.tutorials.cargo.step1.internal.VoyageImpl;
-import org.qi4j.tutorials.cargo.step1.OverbookingPolicy;
 
-public class Step1TestCase extends TestCase
+public class Step1TestCase
+    extends TestCase
 {
     private ShippingService shippingService;
     private Voyage voyage;
 
-
-    protected void setUp() throws Exception
+    protected void setUp()
+        throws Exception
     {
         BookingPolicy policy = new OverbookingPolicy();
         shippingService = new ShippingServiceImpl( policy );
@@ -81,5 +81,4 @@ public class Step1TestCase extends TestCase
     {
         return new VoyageImpl( 100 );  // Fake the finder to just return a new Voyage for the demonstration purpose.
     }
-
 }

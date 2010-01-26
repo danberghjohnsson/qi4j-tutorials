@@ -16,13 +16,13 @@ package org.qi4j.tutorials.services.step3;
 
 import org.qi4j.api.injection.scope.Service;
 
-
 /**
  * Simple service consumer. The service is injected using the @Service annotation.
  */
 public class Consumer
 {
-    @Service Library library;
+    @Service
+    Library library;
 
     public void run()
     {

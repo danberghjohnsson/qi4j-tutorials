@@ -17,7 +17,6 @@
  */
 package org.qi4j.tutorials.cargo.step1;
 
-
 public interface ShippingService
 {
     int makeBooking( Cargo cargo, Voyage voyage );

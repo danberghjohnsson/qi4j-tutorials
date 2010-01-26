@@ -1,16 +1,18 @@
 package org.qi4j.tutorials.composites.tutorial1;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
 
 public class HelloWorldTest
 {
     HelloWorld helloWorld;
 
     @Before
-    public void setUp() throws Exception
+    public void setUp()
+        throws Exception
     {
         helloWorld = new HelloWorld();
     }
@@ -22,14 +24,14 @@ public class HelloWorldTest
             helloWorld.setPhrase( "Hello" );
             helloWorld.setName( "World" );
             String result = helloWorld.say();
-            assertThat( result , equalTo( "Hello World") );
+            assertThat( result, equalTo( "Hello World" ) );
         }
 
         {
             helloWorld.setPhrase( "Hey" );
             helloWorld.setName( "Universe" );
             String result = helloWorld.say();
-            assertThat( result, equalTo( "Hey Universe") );
+            assertThat( result, equalTo( "Hey Universe" ) );
         }
     }
 

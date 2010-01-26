@@ -18,8 +18,8 @@
 package org.qi4j.tutorials.cargo.step1.internal;
 
 import java.util.HashMap;
-import org.qi4j.tutorials.cargo.step1.Voyage;
 import org.qi4j.tutorials.cargo.step1.Cargo;
+import org.qi4j.tutorials.cargo.step1.Voyage;
 
 public class VoyageImpl
     implements Voyage

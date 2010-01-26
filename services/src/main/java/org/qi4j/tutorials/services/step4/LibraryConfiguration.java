@@ -20,7 +20,8 @@ package org.qi4j.tutorials.services.step4;
 import org.qi4j.api.configuration.ConfigurationComposite;
 import org.qi4j.api.property.Property;
 
-public interface LibraryConfiguration extends ConfigurationComposite
+public interface LibraryConfiguration
+    extends ConfigurationComposite
 {
     Property<String> titles();
 

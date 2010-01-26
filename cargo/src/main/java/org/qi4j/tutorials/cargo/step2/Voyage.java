@@ -24,5 +24,4 @@ public interface Voyage
     Property<Double> capacity();
 
     Property<Double> bookedCargoSize();
-
 }

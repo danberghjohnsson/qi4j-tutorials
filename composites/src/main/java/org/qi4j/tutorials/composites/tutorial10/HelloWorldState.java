@@ -1,7 +1,6 @@
 package org.qi4j.tutorials.composites.tutorial10;
 
 import org.qi4j.api.property.Property;
-import org.qi4j.api.property.Immutable;
 import org.qi4j.library.constraints.annotation.NotEmpty;
 
 /**
@@ -10,6 +9,9 @@ import org.qi4j.library.constraints.annotation.NotEmpty;
  */
 public interface HelloWorldState
 {
-    @NotEmpty Property<String> phrase();
-    @NotEmpty Property<String> name();
+    @NotEmpty
+    Property<String> phrase();
+
+    @NotEmpty
+    Property<String> name();
 }

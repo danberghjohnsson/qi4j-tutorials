@@ -23,5 +23,4 @@ import org.qi4j.api.mixin.Mixins;
 public interface ShippingService
 {
     int makeBooking( Cargo cargo, Voyage voyage );
-
 }

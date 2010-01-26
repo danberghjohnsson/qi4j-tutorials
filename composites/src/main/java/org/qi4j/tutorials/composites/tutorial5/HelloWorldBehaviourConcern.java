@@ -5,7 +5,8 @@ import org.qi4j.api.concern.ConcernOf;
 /**
  * This is a concern that modifies the mixin behaviour.
  */
-public class HelloWorldBehaviourConcern extends ConcernOf<HelloWorldBehaviour>
+public class HelloWorldBehaviourConcern
+    extends ConcernOf<HelloWorldBehaviour>
     implements HelloWorldBehaviour
 {
     public String say()

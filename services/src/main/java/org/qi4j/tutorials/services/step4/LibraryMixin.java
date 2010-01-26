@@ -27,7 +27,6 @@ import org.qi4j.api.service.Activatable;
 import org.qi4j.api.value.ValueBuilder;
 import org.qi4j.api.value.ValueBuilderFactory;
 
-
 public class LibraryMixin
     implements Library, Activatable
 {
@@ -85,7 +84,8 @@ public class LibraryMixin
     {
     }
 
-    public void passivate() throws Exception
+    public void passivate()
+        throws Exception
     {
     }
 

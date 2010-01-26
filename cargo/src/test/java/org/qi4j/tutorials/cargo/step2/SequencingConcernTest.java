@@ -17,25 +17,22 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import static org.easymock.EasyMock.createMock;
-import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.verify;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.qi4j.bootstrap.AssemblyException;
-import org.qi4j.bootstrap.ModuleAssembly;
-import org.qi4j.bootstrap.SingletonAssembler;
 import org.qi4j.api.concern.Concerns;
 import org.qi4j.api.mixin.Mixins;
 import org.qi4j.api.property.GenericPropertyInfo;
 import org.qi4j.api.property.Property;
+import org.qi4j.bootstrap.AssemblyException;
+import org.qi4j.bootstrap.ModuleAssembly;
+import org.qi4j.bootstrap.SingletonAssembler;
 import org.qi4j.runtime.property.PropertyInstance;
 import org.qi4j.test.mock.MockComposite;
 import org.qi4j.test.mock.MockPlayerMixin;
+
+import static org.easymock.EasyMock.*;
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
 
 /**
  * Unit tests for SequencingConcern.
@@ -49,12 +46,13 @@ public class SequencingConcernTest
      * returned.
      */
     @Test
-    @Ignore( "Expectations need to be figured out.")
+    @Ignore( "Expectations need to be figured out." )
     public void failingBooking()
     {
         SingletonAssembler assembler = new SingletonAssembler()
         {
-            public void assemble( ModuleAssembly module ) throws AssemblyException
+            public void assemble( ModuleAssembly module )
+                throws AssemblyException
             {
                 module.addTransients( ShippingServiceTestComposite.class );
             }
@@ -64,9 +62,12 @@ public class SequencingConcernTest
         Voyage voyage = createMock( Voyage.class );
         HasSequence sequence = createMock( HasSequence.class );
         expect( shippingService.makeBooking( cargo, voyage ) ).andReturn( -1000 );
-        expect( voyage.bookedCargoSize() ).andReturn( new PropertyInstance<Double>( new GenericPropertyInfo( Voyage.class, "bookedCargoSize" ), 0.0, null ) ).atLeastOnce();
-        expect( cargo.size() ).andReturn( new PropertyInstance<Double>( new GenericPropertyInfo( Cargo.class, "size" ), 0.0, null ) ).atLeastOnce();
-        expect( sequence.sequence() ).andReturn( new PropertyInstance<Integer>( new GenericPropertyInfo( HasSequence.class, "sequence" ), 0, null ) ).atLeastOnce();
+        expect( voyage.bookedCargoSize() ).andReturn( new PropertyInstance<Double>( new GenericPropertyInfo( Voyage.class, "bookedCargoSize" ), 0.0, null ) )
+            .atLeastOnce();
+        expect( cargo.size() ).andReturn( new PropertyInstance<Double>( new GenericPropertyInfo( Cargo.class, "size" ), 0.0, null ) )
+            .atLeastOnce();
+        expect( sequence.sequence() ).andReturn( new PropertyInstance<Integer>( new GenericPropertyInfo( HasSequence.class, "sequence" ), 0, null ) )
+            .atLeastOnce();
         replay( shippingService, cargo, voyage );
         ShippingServiceTestComposite underTest =
             assembler.transientBuilderFactory().newTransient( ShippingServiceTestComposite.class );
@@ -80,12 +81,13 @@ public class SequencingConcernTest
      * returned.
      */
     @Test
-    @Ignore( "Expectations need to be figured out.")
+    @Ignore( "Expectations need to be figured out." )
     public void succesfulBooking()
     {
         SingletonAssembler assembler = new SingletonAssembler()
         {
-            public void assemble( ModuleAssembly module ) throws AssemblyException
+            public void assemble( ModuleAssembly module )
+                throws AssemblyException
             {
                 module.addTransients( ShippingServiceTestComposite.class );
             }
@@ -109,9 +111,8 @@ public class SequencingConcernTest
 
     @Mixins( MockPlayerMixin.class )
     @Concerns( SequencingConcern.class )
-    public static interface ShippingServiceTestComposite extends ShippingService, HasSequence, MockComposite
+    public static interface ShippingServiceTestComposite
+        extends ShippingService, HasSequence, MockComposite
     {
     }
-
-
 }

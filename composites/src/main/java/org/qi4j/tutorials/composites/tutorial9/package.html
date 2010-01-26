@@ -22,7 +22,8 @@ To hide the state from the client we need to use what is called Private Mixins. 
 any mixin that is referenced by another Mixin by using the @This injection, but which is not included
 in the TransientComposite type. As long as there is a Mixin implementation declared for the interface specified
 by the @This injection it will work, since Qi4j can know how to implement the interface. But since
-it is not extended by the TransientComposite type there is no way for a user of the TransientComposite to access it. That
+it is not extended by the TransientComposite type there is no way for a user of the TransientComposite to access it.
+That
 Mixin becomes an implementation detail. This can be used either for encapsulation purposes, or for referencing
 utility mixins that help the rest of the code implement some interface, but which itself should not be exposed.
 <p/>
@@ -36,11 +37,13 @@ Steps for this tutorial:
     <li>Move the say() method into the TransientComposite interface.</li>
     <li>Remove the behaviour interface.</li>
     <li>Remove the HelloWorldBehaviourMixin, create a HelloWorldMixin and
-    let the HelloWorldMixin implement the TransientComposite directly.</li>
+        let the HelloWorldMixin implement the TransientComposite directly.
+    </li>
     <li>Mark the HelloWorldMixin as abstract and implement only the say() method.</li>
     <li>Remove the HelloWorldState from the TransientComposite "extends" declaration.</li>
     <li>Remove the GenericPropertyMixin. The Property methods will be implemented by the
-    standard PropertyMixin declared in the TransientComposite interface instead.</li>
+        standard PropertyMixin declared in the TransientComposite interface instead.
+    </li>
 </ol>
 </body>
         

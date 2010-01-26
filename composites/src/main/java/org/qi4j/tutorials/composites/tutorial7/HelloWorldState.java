@@ -11,13 +11,13 @@ import org.qi4j.library.constraints.annotation.NotEmpty;
  */
 public interface HelloWorldState
 {
-    void setPhrase(@NotEmpty String phrase)
+    void setPhrase( @NotEmpty String phrase )
         throws IllegalArgumentException;
 
     String getPhrase();
 
-    void setName(@NotEmpty String name)
+    void setName( @NotEmpty String name )
         throws IllegalArgumentException;
-    
+
     String getName();
 }

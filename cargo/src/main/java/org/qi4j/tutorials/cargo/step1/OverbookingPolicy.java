@@ -17,11 +17,8 @@
  */
 package org.qi4j.tutorials.cargo.step1;
 
-import org.qi4j.tutorials.cargo.step1.BookingPolicy;
-import org.qi4j.tutorials.cargo.step1.Cargo;
-import org.qi4j.tutorials.cargo.step1.Voyage;
-
-public class OverbookingPolicy implements BookingPolicy
+public class OverbookingPolicy
+    implements BookingPolicy
 {
     public boolean isAllowed( Cargo cargo, Voyage voyage )
     {

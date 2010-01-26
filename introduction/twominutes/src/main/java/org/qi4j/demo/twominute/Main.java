@@ -1,9 +1,9 @@
 package org.qi4j.demo.twominute;
 
+import org.qi4j.api.composite.TransientBuilderFactory;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.SingletonAssembler;
-import org.qi4j.api.composite.TransientBuilderFactory;
 
 public class Main
 {

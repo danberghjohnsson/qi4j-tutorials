@@ -1,6 +1,5 @@
 package org.qi4j.tutorials.services.step2;
 
-
 public interface Library
 {
     Book borrowBook( String author, String title );

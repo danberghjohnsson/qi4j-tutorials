@@ -24,11 +24,11 @@ import org.qi4j.api.service.Activatable;
 import org.qi4j.api.value.ValueBuilder;
 import org.qi4j.api.value.ValueBuilderFactory;
 
-
 public class LibraryMixin
     implements Library, Activatable
 {
-    @Structure ValueBuilderFactory factory;
+    @Structure
+    ValueBuilderFactory factory;
     private HashMap<String, ArrayList<Book>> books;
 
     public LibraryMixin()
@@ -67,14 +67,16 @@ public class LibraryMixin
         copies.add( book );
     }
 
-    public void activate() throws Exception
+    public void activate()
+        throws Exception
     {
         createBook( "Eric Evans", "Domain Driven Design", 2 );
         createBook( "Andy Hunt", "Pragmatic Programmer", 3 );
         createBook( "Kent Beck", "Extreme Programming Explained", 5 );
     }
 
-    public void passivate() throws Exception
+    public void passivate()
+        throws Exception
     {
     }
 

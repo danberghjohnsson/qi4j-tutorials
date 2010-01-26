@@ -14,11 +14,12 @@ import org.qi4j.api.service.ServiceComposite;
 import org.qi4j.api.value.ValueBuilder;
 import org.qi4j.api.value.ValueBuilderFactory;
 
-
 @Mixins( LibraryService.LibraryMixin.class )
-public interface LibraryService extends Library, ServiceComposite
+public interface LibraryService
+    extends Library, ServiceComposite
 {
-    public static interface LibraryConfiguration extends ConfigurationComposite
+    public static interface LibraryConfiguration
+        extends ConfigurationComposite
     {
         Property<String> titles();
 
@@ -34,7 +35,8 @@ public interface LibraryService extends Library, ServiceComposite
         private HashMap<String, ArrayList<Book>> books;
 
         public LibraryMixin( @This Configuration<LibraryConfiguration> config,
-                             @Structure ValueBuilderFactory factory )
+                             @Structure ValueBuilderFactory factory
+        )
         {
             books = new HashMap<String, ArrayList<Book>>();
             String titles = config.configuration().titles().get();
@@ -86,7 +88,8 @@ public interface LibraryService extends Library, ServiceComposite
         {
         }
 
-        public void passivate() throws Exception
+        public void passivate()
+            throws Exception
         {
         }
 
@@ -113,6 +116,5 @@ public interface LibraryService extends Library, ServiceComposite
         {
             return author + "::" + title;
         }
-
     }
 }

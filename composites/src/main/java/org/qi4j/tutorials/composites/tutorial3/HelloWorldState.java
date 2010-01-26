@@ -9,13 +9,13 @@ package org.qi4j.tutorials.composites.tutorial3;
  */
 public interface HelloWorldState
 {
-    void setPhrase(String phrase)
+    void setPhrase( String phrase )
         throws IllegalArgumentException;
 
     String getPhrase();
 
-    void setName(String name)
+    void setName( String name )
         throws IllegalArgumentException;
-    
+
     String getName();
 }

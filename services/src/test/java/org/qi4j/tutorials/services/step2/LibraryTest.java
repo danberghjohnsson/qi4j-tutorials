@@ -18,11 +18,12 @@
 package org.qi4j.tutorials.services.step2;
 
 import org.junit.Test;
-import org.qi4j.test.AbstractQi4jTest;
-import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.AssemblyException;
+import org.qi4j.bootstrap.ModuleAssembly;
+import org.qi4j.test.AbstractQi4jTest;
 
-public class LibraryTest extends AbstractQi4jTest
+public class LibraryTest
+    extends AbstractQi4jTest
 {
     @Test
     public void testLibrary()

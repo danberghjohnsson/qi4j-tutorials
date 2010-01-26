@@ -9,7 +9,8 @@ import org.qi4j.api.injection.scope.This;
 public class HelloWorldBehaviourMixin
     implements HelloWorldBehaviour
 {
-    @This HelloWorldState state;
+    @This
+    HelloWorldState state;
 
     public String say()
     {

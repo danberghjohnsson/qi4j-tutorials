@@ -21,6 +21,7 @@ import org.qi4j.api.composite.TransientComposite;
 import org.qi4j.api.concern.Concerns;
 
 @Concerns( { SequencingConcern.class, OverbookingConcern.class } )
-public interface ShippingServiceComposite extends ShippingService, TransientComposite
+public interface ShippingServiceComposite
+    extends ShippingService, TransientComposite
 {
 }

@@ -29,7 +29,8 @@ import org.qi4j.api.property.StateHolder;
 public class GenericPropertyMixin
     implements InvocationHandler
 {
-    @State private StateHolder state;
+    @State
+    private StateHolder state;
 
     public Object invoke( Object proxy, Method method, Object[] args )
         throws Throwable

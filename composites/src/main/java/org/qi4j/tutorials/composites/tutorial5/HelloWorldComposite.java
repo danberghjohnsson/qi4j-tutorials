@@ -1,6 +1,5 @@
 package org.qi4j.tutorials.composites.tutorial5;
 
-import org.qi4j.api.composite.Composite;
 import org.qi4j.api.composite.TransientComposite;
 
 /**

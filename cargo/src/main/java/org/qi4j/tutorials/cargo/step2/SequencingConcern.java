@@ -21,10 +21,12 @@ import org.qi4j.api.concern.ConcernOf;
 import org.qi4j.api.injection.scope.This;
 import org.qi4j.api.property.Property;
 
-public class SequencingConcern extends ConcernOf<ShippingService>
+public class SequencingConcern
+    extends ConcernOf<ShippingService>
     implements ShippingService
 {
-    @This private HasSequence generator;
+    @This
+    private HasSequence generator;
 
     public int makeBooking( Cargo cargo, Voyage voyage )
     {

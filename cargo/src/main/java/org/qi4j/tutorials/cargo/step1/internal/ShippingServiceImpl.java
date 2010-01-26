@@ -28,7 +28,6 @@ public class ShippingServiceImpl
     private BookingPolicy bookingPolicy;
     private SimpleSequenceImpl orderConfirmationSequence;
 
-
     public ShippingServiceImpl( BookingPolicy bookingPolicy )
     {
         this.bookingPolicy = bookingPolicy;
@@ -52,5 +51,4 @@ public class ShippingServiceImpl
         }
         return confirmation;
     }
-
 }

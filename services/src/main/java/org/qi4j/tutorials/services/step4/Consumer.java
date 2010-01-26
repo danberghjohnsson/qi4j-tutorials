@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008, Rickard …berg. All Rights Reserved.
+ * Copyright (c) 2008, Rickard ï¿½berg. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,13 @@ package org.qi4j.tutorials.services.step4;
 
 import org.qi4j.api.injection.scope.Service;
 
-
 /**
  * Simple service consumer. The service is injected using the @Service annotation.
  */
 public class Consumer
 {
-    @Service Library library;
+    @Service
+    Library library;
 
     public void run()
     {

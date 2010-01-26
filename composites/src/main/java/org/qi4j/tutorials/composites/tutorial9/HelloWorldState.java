@@ -12,6 +12,9 @@ import org.qi4j.library.constraints.annotation.NotEmpty;
  */
 public interface HelloWorldState
 {
-    @NotEmpty Property<String> phrase();
-    @NotEmpty Property<String> name();
+    @NotEmpty
+    Property<String> phrase();
+
+    @NotEmpty
+    Property<String> name();
 }

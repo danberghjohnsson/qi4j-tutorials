@@ -19,7 +19,8 @@ package org.qi4j.tutorials.cargo.step1.internal;
 
 import org.qi4j.tutorials.cargo.step1.SequenceGenerator;
 
-public class SimpleSequenceImpl implements SequenceGenerator
+public class SimpleSequenceImpl
+    implements SequenceGenerator
 {
     private int sequence = 1;
 

@@ -1,24 +1,26 @@
 package org.qi4j.tutorials.composites.tutorial3;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.bootstrap.SingletonAssembler;
 
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
+
 public class HelloWorldTest
 {
     HelloWorld helloWorld;
 
     @Before
-    public void setUp() throws Exception
+    public void setUp()
+        throws Exception
     {
         SingletonAssembler assembly = new SingletonAssembler()
         {
-            public void assemble( ModuleAssembly module ) throws AssemblyException
+            public void assemble( ModuleAssembly module )
+                throws AssemblyException
             {
                 module.addTransients( HelloWorldComposite.class );
             }

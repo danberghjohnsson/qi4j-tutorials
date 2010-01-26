@@ -17,12 +17,13 @@
  */
 package org.qi4j.tutorials.cargo.step2;
 
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import org.qi4j.api.composite.TransientBuilder;
 import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.ModuleAssembly;
 import org.qi4j.test.AbstractQi4jTest;
-import org.qi4j.api.composite.TransientBuilder;
+
+import static org.junit.Assert.*;
 
 public class Step2TestCase
     extends AbstractQi4jTest
@@ -30,7 +31,9 @@ public class Step2TestCase
     private Voyage voyage;
     private ShippingService shippingService;
 
-    @Override public void setUp() throws Exception
+    @Override
+    public void setUp()
+        throws Exception
     {
         super.setUp();
         TransientBuilder<VoyageComposite> voyageBuilder = transientBuilderFactory.newTransientBuilder( VoyageComposite.class );

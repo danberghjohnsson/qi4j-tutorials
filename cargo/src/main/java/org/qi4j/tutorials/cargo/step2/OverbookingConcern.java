@@ -19,8 +19,8 @@ package org.qi4j.tutorials.cargo.step2;
 
 import org.qi4j.api.concern.ConcernOf;
 
-
-public class OverbookingConcern extends ConcernOf<ShippingService>
+public class OverbookingConcern
+    extends ConcernOf<ShippingService>
     implements ShippingService
 {
     public int makeBooking( Cargo cargo, Voyage voyage )

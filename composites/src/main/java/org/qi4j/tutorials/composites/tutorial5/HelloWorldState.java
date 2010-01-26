@@ -2,7 +2,6 @@ package org.qi4j.tutorials.composites.tutorial5;
 
 import org.qi4j.api.mixin.Mixins;
 
-
 /**
  * This interface contains only the state
  * of the HelloWorld object.
@@ -12,13 +11,13 @@ import org.qi4j.api.mixin.Mixins;
 @Mixins( HelloWorldStateMixin.class )
 public interface HelloWorldState
 {
-    void setPhrase(String phrase)
+    void setPhrase( String phrase )
         throws IllegalArgumentException;
 
     String getPhrase();
 
-    void setName(String name)
+    void setName( String name )
         throws IllegalArgumentException;
-    
+
     String getName();
 }

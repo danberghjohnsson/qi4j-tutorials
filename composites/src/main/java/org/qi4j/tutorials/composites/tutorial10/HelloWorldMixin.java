@@ -10,7 +10,8 @@ import org.qi4j.api.injection.scope.This;
 public abstract class HelloWorldMixin
     implements HelloWorldComposite
 {
-    @This HelloWorldState state;
+    @This
+    HelloWorldState state;
 
     public String say()
     {

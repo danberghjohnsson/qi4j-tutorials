@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/cargo/qi4j-cargo.iml" filepath="$PROJECT_DIR$/cargo/qi4j-cargo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/composites/qi4j-composites.iml" filepath="$PROJECT_DIR$/composites/qi4j-composites.iml" />
-      <module fileurl="file://$PROJECT_DIR$/introduction/qi4j-introductions.iml" filepath="$PROJECT_DIR$/introduction/qi4j-introductions.iml" />
-      <module fileurl="file://$PROJECT_DIR$/introduction/tenminutes/qi4j-ten-minutes.iml" filepath="$PROJECT_DIR$/introduction/tenminutes/qi4j-ten-minutes.iml" />
-      <module fileurl="file://$PROJECT_DIR$/introduction/thirtyminutes/qi4j-thirty-minutes.iml" filepath="$PROJECT_DIR$/introduction/thirtyminutes/qi4j-thirty-minutes.iml" />
-      <module fileurl="file://$PROJECT_DIR$/qi4j-tutorial.iml" filepath="$PROJECT_DIR$/qi4j-tutorial.iml" />
-      <module fileurl="file://$PROJECT_DIR$/services/qi4j-tutorial-services.iml" filepath="$PROJECT_DIR$/services/qi4j-tutorial-services.iml" />
-      <module fileurl="file://$PROJECT_DIR$/introduction/twohours/qi4j-two-hours.iml" filepath="$PROJECT_DIR$/introduction/twohours/qi4j-two-hours.iml" />
-      <module fileurl="file://$PROJECT_DIR$/introduction/twominutes/qi4j-two-minutes.iml" filepath="$PROJECT_DIR$/introduction/twominutes/qi4j-two-minutes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cargo/qi4j-cargo.iml" filepath="$PROJECT_DIR$/cargo/qi4j-cargo.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/composites/qi4j-composites.iml"
+              filepath="$PROJECT_DIR$/composites/qi4j-composites.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/introduction/qi4j-introductions.iml"
+              filepath="$PROJECT_DIR$/introduction/qi4j-introductions.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/introduction/tenminutes/qi4j-ten-minutes.iml"
+              filepath="$PROJECT_DIR$/introduction/tenminutes/qi4j-ten-minutes.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/introduction/thirtyminutes/qi4j-thirty-minutes.iml"
+              filepath="$PROJECT_DIR$/introduction/thirtyminutes/qi4j-thirty-minutes.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qi4j-tutorial.iml" filepath="$PROJECT_DIR$/qi4j-tutorial.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/services/qi4j-tutorial-services.iml"
+              filepath="$PROJECT_DIR$/services/qi4j-tutorial-services.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/introduction/twohours/qi4j-two-hours.iml"
+              filepath="$PROJECT_DIR$/introduction/twohours/qi4j-two-hours.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/introduction/twominutes/qi4j-two-minutes.iml"
+              filepath="$PROJECT_DIR$/introduction/twominutes/qi4j-two-minutes.iml"/>
     </modules>
   </component>
 </project>
