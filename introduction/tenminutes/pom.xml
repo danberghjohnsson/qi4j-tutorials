@@ -3,12 +3,12 @@
   <parent>
     <groupId>org.qi4j</groupId>
     <artifactId>qi4j-tutorial</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
   </parent>
   <groupId>org.qi4j.tutorial</groupId>
   <artifactId>qi4j-ten-minutes</artifactId>
   <name>Qi4j Tutorial - Introduction - 10 minutes</name>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.1</version>
   <dependencies>
     <dependency>
       <groupId>org.qi4j.core</groupId>
