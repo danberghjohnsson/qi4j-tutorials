@@ -3,12 +3,12 @@
   <parent>
     <groupId>org.qi4j</groupId>
     <artifactId>qi4j-tutorial</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
   </parent>
   <groupId>org.qi4j.tutorial</groupId>
   <artifactId>qi4j-composites</artifactId>
   <name>Qi4j Tutorial - Composite</name>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
   <build>
     <resources>
       <resource>
